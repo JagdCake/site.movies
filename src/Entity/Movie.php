@@ -184,12 +184,12 @@ class Movie
         return $this;
     }
 
-    public function getWatchedOn(): ?\DateTimeInterface
+    public function getWatchedOn(): ?string
     {
         return $this->watched_on;
     }
 
-    public function setWatchedOn(?\DateTimeInterface $watched_on): self
+    public function setWatchedOn(string $watched_on): self
     {
         $this->watched_on = $watched_on;
 
