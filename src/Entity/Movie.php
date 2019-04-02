@@ -62,12 +62,12 @@ class Movie
     private $my_rating;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="string", length=11)
      */
     private $watched_on;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      */
     private $discussion;
 
