@@ -26,7 +26,7 @@
   <meta property="twitter:image:width" content="749">
   <meta property="twitter:image:height" content="410">
   <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self'; style-src 'unsafe-inline' 'self'; connect-src 'self'; img-src 'self'; upgrade-insecure-requests"> -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
   <link rel="stylesheet" href="/css/tachyons.min.css"/>
   <style>
  @font-face {
@@ -180,8 +180,91 @@ a img {
   <title>{% block title %}I watched a Movie!{% endblock %}</title>
 </head>
     
-<body>
-    {% block body %}{% endblock %}
-</body>
+<body class="bg-near-black near-black serif fast-transition flex justify-center">
 
+    <button title="Back to Top" class="dn go-up fixed bottom-1 right-1 bottom-2-l right-2-l pa2 bg-near-black bn br-100 shadow-1 pointer z-1 o-30">
+        <img class="w-100" src="images/up.svg" alt="up arrow icon">
+    </button>
+
+    <div class="flex flex-wrap w-100 w-90-m w-50-l">
+
+        <header class="w-100">
+            <nav class="flex flex-wrap w-100">
+                <section class="w-100 bg-red-pink tc slackey lh-solid br3 br--bottom br--bottom-l br--bottom-m">
+                    <h1 class="f1-l f3 f2-m mv3 text-shadow tracked-l tracked-tight">
+                        <a class="link near-black" href="/">I watched a Movie!</a>
+                    </h1>
+                </section>
+
+                <article class="mv3 w-100 flex flex-wrap justify-between mh2 mh0-ns">
+                    <button class="order-0 hover-button about-button pointer w-20 h3 w-10-ns br3 h-auto-m bg-red-pink bn" title="Toggle 'about' section">
+                        <img class="w-100 h-100 img-shadow" src="images/about.svg" alt="question mark icon">
+                    </button>
+
+                    <section class="order-3 order-2-ns mt3 mt0-ns w-70-ns w-100 br3 h2 h3-l h-auto-m bg-red-pink flex flex-wrap justify-center">
+                        <p class="movie-number slackey f5 tracked-tight f4-m ma2 ma0-ns vw-f3-l self-center"><em class="fs-normal">504 movies</em> since June 2016</p>
+                        <input class="dn w-100 br3 f4 vw-f3-l f3-m ba b--red-pink bg-near-black red-pink pa2" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
+
+                        <article class="mt5-l mt45-m mt4 mw-90 mw-30-m mw-30-l dn movie-list absolute bg-red-pink f3-l z-1 f4 pa2 br3 br--bottom br--bottom-l br--bottom-m tl shadow-1">
+                            {% block search %}{% endblock %}
+                        </article>
+
+                    </section>
+
+                  <button class="order-1 order-3-ns hover-button search-button pointer w-20 h3 w-10-ns br3 h-auto-m bg-red-pink bn" title="Toggle search box">
+                        <img class="search w-100 h-100 img-shadow" src="images/search.svg" alt="magnifying glass icon">
+                    </button>
+                </article>
+            </nav>
+        </header>
+
+      <article class="about w-100 bg-red-pink dn f6-l f5-m f6 z1 pa1-l pa2 br3 br--bottom br--bottom-l br--bottom-m h0 flex-none">
+            <section class="w-50-ns w-100 pa1">
+                <p class="ma0">This is just my personal movie catalogue. The idea is to catalogue every movie I (re)watch by creating an entry which includes 5 things:</p>
+                <p class="mv2">1. Info card</p>
+                <p class="mv2">2. Release date (year)</p>
+                <p class="mv2">3. Date on which I've watched the movie</p>
+                <p class="mv2">4. My rating</p>
+                <p class="mv2">5. Link to a movie discussion or reviews</p>
+            </section>
+            <section class="bl-ns br-ns bt-0-ns bb-0-ns bt bb w-50-ns w-100 pa1">
+                <h1 class="tc b ma0-ns mv2 f5">Rating system:</h1>
+                <div class="flex">
+                    <div class="tl center f6">
+                        <p class="mv2">Bad Eggplant = <span class="code">1 to 3.9</span></p>
+                        <p class="mv2">Decent Carrot = <span class="code">4 to 4.9</span></p>
+                        <p class="mv2">Good Tomato = <span class="code">5 to 5.9</span></p>
+                        <p class="mv2">Great Onion = <span class="code">6 to 7.8</span></p>
+                        <p class="mv2">Amazing Savory = <span class="code">7.9 to 8.9</span></p>
+                        <p class="mv2">Sublime Lettuce = <span class="code">9 to 10</span></p>
+                    </div>
+                </div>
+            </section>
+            <section class="w-50-ns w-100 pa1">
+                <address class="tc ma0-ns mv3 fs-normal"><span class="b">Contact:</span> jc@jagdcake.com</address>
+                <p class="tc mv3">
+                    <a class="link near-black underline" href="https://data.jagdcake.com">Data on watched movies</a>
+                </p>
+                <p class="tc mv3">
+                    <a class="link near-black underline" href="/javascript">JavaScript License Information</a>
+                </p>
+            </section>
+        </article>
+
+        <div class="first-separator w-100 mb3"></div>
+
+        <main class="w-100 flex flex-wrap justify-center justify-between-ns tc oswald">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="w-100 bg-red-pink tc slackey lh-solid br3 br--top justify-center">
+            <h2 class="mv3 f1-l f2 text-shadow tracked">
+                <a class="link near-black" href="/">The End</a>
+            </h2>
+        </footer>
+
+    </div>
+
+<script src="/js/all.js"></script>
+</body>
 </html>
