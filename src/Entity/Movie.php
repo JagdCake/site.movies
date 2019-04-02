@@ -47,12 +47,12 @@ class Movie
     private $imdb_rating;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="simple_array")
      */
     private $directors = [];
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="simple_array")
      */
     private $top_actors = [];
 
