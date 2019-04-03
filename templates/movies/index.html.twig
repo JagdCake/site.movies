@@ -4,7 +4,7 @@
 
     {% for movie in movies %}
         <p>
-            <a href="#{{ movie.id }}" class="link near-black mv3 underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
+            <a href="#{{ movie.id }}" class="text-black my-3 underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
         </p>
     {% endfor %}
 
@@ -13,8 +13,54 @@
 {% block main %}
 
     {% for movie in movies %}
-        <article id="{{ movie.id }}" class="w-third-ns w-80">
+        <article id="{{ movie.id }}" class="md:w-1/3 w-5/6">
+            <div class="mx-auto text-center">
+                <section class="bg-white py-4 mx-4 h-poster flex flex-wrap items-center border b--red-pink">
+                    <div class="h-49p w-full flex flex-wrap">
+                        <h1 class="w-full self-center px-2 text-3xl">{{ movie.title }}</h1>
+                        <h2 class="text-lg font-normal w-full">{{ movie.yearOfRelease }}</h2>
+                    </div>
+
+                    <div class="h-1p w-full border-b-2 border-black"></div>
+
+                    <div class="h-1/2 w-full flex flex-wrap">
+                         <div class="w-full self-center text-2xl">
+                            <h1 class="text-base font-normal">Directed by</h1>
+                                {% for director in movie.directors %}
+                                    <p>
+                                        <strong class="font-normal">{{ director }}</strong>
+                                    </p>
+                                {% endfor %}
+                           <h2 class="text-base mt-3 font-normal">Starring</h2>
+                                <p>
+                                    <em class="roman">{{ movie.topActors[0] }}</em>
+                                </p>
+                                <p>
+                                    <em class="roman">{{ movie.topActors[1] }}</em>
+                                </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="vw-12 mw45 mw42-m f3 mx-auto vw-f2 mt-1 text-center">
+                <p class="my-rating bg-red-pink m-0 p-1 rounded-sm">{{ movie.myRating }}</p>
+                <p class="watched-on bg-red-pink m-0 p-1 rounded-sm">
+                    <time datetime="{{ movie.watchedOn }}">{{ movie.watchedOn }}</time>
+                </p>
+                <p class="discussion bg-red-pink m-0 p-1 rounded-sm">
+                    <a href="{{ movie.discussion }}" class="link text-black underline">Discussion</a>
+                </p>
+                <p class="imdb bg-red-pink m-0 p-1 rounded-sm">
+                    <a class="text-black" title="{{ movie.title }} on IMDb" href="https://www.imdb.com/title/{{ movie.imdbId }}/">IMDb link</a>
+                </p>
+            </section>
         </article>
+
+        <div class="m-separator"></div>
+        {% if loop.index != 0 and loop.index % 3 == 0 %}
+            <div class="separator w-full md:my-3"></div>
+        {% endif %}
     {% endfor %}
         
 {% endblock %}
