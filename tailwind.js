@@ -262,6 +262,8 @@ module.exports = {
     '4xl': '2.25rem',   // 36px
     '5xl': '3rem',      // 48px
     'f3': '1.6rem',
+    'f2': '1.9vw',
+    'f3-vw': '1.6vw',
     'f1': '3vw',
   },
 
