@@ -1,11 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block search %}
 
     {% for movie in movies %}
-        <article id="{{ movie.id }}">
-            <h1>{{ movie.title }}</h1>
+        <p>
+            <a href="#{{ movie.id }}" class="link near-black mv3 underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
+        </p>
+    {% endfor %}
 
+{% endblock %}
+
+{% block main %}
+
+    {% for movie in movies %}
+        <article id="{{ movie.id }}" class="w-third-ns w-80">
         </article>
     {% endfor %}
         
