@@ -46,7 +46,7 @@ let defaultConfig = require('tailwindcss/defaultConfig')()
 let colors = {
   'transparent': 'transparent',
 
-  'black': '#22292f',
+  'black': '#111',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
@@ -531,6 +531,7 @@ module.exports = {
   height: {
     'auto': 'auto',
     'px': '1px',
+    '0': '0',
     '1': '0.25rem',
     '2': '0.5rem',
     '3': '0.75rem',
@@ -545,6 +546,10 @@ module.exports = {
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
+    'poster': '26rem',
+    '1/2': '50%',
+    '49p': '49%',
+    '1p': '1%',
     'full': '100%',
     'screen': '100vh',
   },
@@ -819,6 +824,7 @@ module.exports = {
   opacity: {
     '0': '0',
     '25': '.25',
+    '30': '.3',
     '50': '.5',
     '75': '.75',
     '100': '1',
