@@ -123,6 +123,12 @@ a img {
 .flex-3 {
     order: 3;   
 }
+.bottom-1 {
+    bottom: 1rem;
+}
+.right-1 {
+    right: 1rem;
+}
 .vw-12 p:not(:last-of-type){
     border-bottom:1px solid #111
 }
@@ -209,6 +215,12 @@ a img {
     }
     .mw-30-l{
         max-width:30rem
+    }
+    .bottom-2-l {
+        bottom: 2rem;
+    }
+    .right-2-l {
+        right: 2rem;
     }
 }
 /**
