@@ -31,39 +31,39 @@
   <title>{% block title %}I watched a Movie!{% endblock %}</title>
 </head>
     
-<body class="bg-near-black near-black serif fast-transition flex justify-center">
+<body class="bg-black text-black font-serif fast-transition flex justify-center">
 
-    <button title="Back to Top" class="dn go-up fixed bottom-1 right-1 bottom-2-l right-2-l pa2 bg-near-black bn br-100 shadow-1 pointer z-1 o-30">
-        <img class="w-100" src="images/up.svg" alt="up arrow icon">
+    <button title="Back to Top" class="hidden go-up fixed bottom-1 right-1 bottom-2-l right-2-l p-2 bg-black border-none rounded-full shadow-outline pointer z-10 opacity-30">
+        <img class="w-full" src="images/up.svg" alt="up arrow icon">
     </button>
 
-    <div class="flex flex-wrap w-100 w-90-m w-50-l">
+    <div class="flex flex-wrap w-full lg:w-1/2 w-5/6">
 
-        <header class="w-100">
-            <nav class="flex flex-wrap w-100">
-                <section class="w-100 bg-red-pink tc slackey lh-solid br3 br--bottom br--bottom-l br--bottom-m">
-                    <h1 class="f1-l f3 f2-m mv3 text-shadow tracked-l tracked-tight">
-                        <a class="link near-black" href="/">I watched a Movie!</a>
+        <header class="w-full">
+            <nav class="flex flex-wrap w-full">
+                <section class="w-full bg-red-pink text-center slackey leading-none rounded-b">
+                    <h1 class="f1-l f3 f2-m my-3 lg:tracking-wide tracking-tight">
+                        <a class="text-black no-underline" href="/">I watched a Movie!</a>
                     </h1>
                 </section>
 
-                <article class="mv3 w-100 flex flex-wrap justify-between mh2 mh0-ns">
-                    <button class="order-0 hover-button about-button pointer w-20 h3 w-10-ns br3 h-auto-m bg-red-pink bn" title="Toggle 'about' section">
-                        <img class="w-100 h-100 img-shadow" src="images/about.svg" alt="question mark icon">
+                <article class="my-3 w-full flex flex-wrap justify-between mx-2 mh0-ns">
+                    <button class="order-0 hover-button about-button pointer w-1/4 h-16 w-10-ns rounded h-auto-m bg-red-pink bn" title="Toggle 'about' section">
+                        <img class="w-full h-full img-shadow" src="images/about.svg" alt="question mark icon">
                     </button>
 
-                    <section class="order-3 order-2-ns mt3 mt0-ns w-70-ns w-100 br3 h2 h3-l h-auto-m bg-red-pink flex flex-wrap justify-center">
-                        <p class="movie-number slackey f5 tracked-tight f4-m ma2 ma0-ns vw-f3-l self-center"><em class="fs-normal">504 movies</em> since June 2016</p>
-                        <input class="dn w-100 br3 f4 vw-f3-l f3-m ba b--red-pink bg-near-black red-pink pa2" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
+                    <section class="order-2 md:order-3 mt-3 md:mt-0 md:w-1/6 w-full rounded h-8 lg:h-12 md:h-auto bg-red-pink flex flex-wrap justify-center">
+                        <p class="movie-number slackey f5 tracking-tight f4-m m-2 md:m-0 vw-f3-l self-center"><em class="roman">504 movies</em> since June 2016</p>
+                        <input class="hidden w-full rounded f4 vw-f3-l f3-m border b--red-pink bg-black red-pink p-2" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
 
-                        <article class="mt5-l mt45-m mt4 mw-90 mw-30-m mw-30-l dn movie-list absolute bg-red-pink f3-l z-1 f4 pa2 br3 br--bottom br--bottom-l br--bottom-m tl shadow-1">
+                        <article class="lg:mt-16 mt45-m mt-4 mw-90 mw-30-m mw-30-l hidden movie-list absolute bg-red-pink f3-l z-10 f4 p-2 rounded-b text-left shadow">
                             {% block search %}{% endblock %}
                         </article>
 
                     </section>
 
-                  <button class="order-1 order-3-ns hover-button search-button pointer w-20 h3 w-10-ns br3 h-auto-m bg-red-pink bn" title="Toggle search box">
-                        <img class="search w-100 h-100 img-shadow" src="images/search.svg" alt="magnifying glass icon">
+                  <button class="order-1 order-3-ns hover-button search-button pointer w-1/4 h-16 w-10-ns rounded h-auto-m bg-red-pink bn" title="Toggle search box">
+                        <img class="search w-full h-full img-shadow" src="images/search.svg" alt="magnifying glass icon">
                     </button>
                 </article>
             </nav>
