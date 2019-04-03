@@ -108,22 +108,25 @@ a img {
     -webkit-text-decoration-style:dashed;
     text-decoration-style:dashed
 }
-.order-0 {
+.flex-none {
+    flex: none;
+}
+.flex-0 {
     order: 0;
 }
-.order-1 {
+.flex-1 {
     order: 1;
 }
-.order-2 {
+.flex-2 {
     order: 2;
 }
-.order-3 {
+.flex-3 {
     order: 3;   
 }
 .vw-12 p:not(:last-of-type){
     border-bottom:1px solid #111
 }
-.h0{
+.transition-height {
     -webkit-transition:height 0.4s linear;
     -o-transition:height 0.4s linear;
     transition:height 0.4s linear;
