@@ -53,7 +53,7 @@
                     </button>
 
                     <section class="mt-3 md:mt-0 md:w-3/5 w-full rounded h-8 lg:h-16 md:h-auto bg-red-pink flex flex-wrap justify-center">
-                        <p class="movie-number slackey f5 tracking-tight f4-m m-2 md:m-0 vw-f3-l self-center"><em class="roman">504 movies</em> since June 2016</p>
+                        <p class="movie-number slackey f5 tracking-tight f4-m m-2 md:m-0 vw-f3-l self-center"><em class="roman">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
                         <input class="hidden w-full rounded f4 vw-f3-l f3-m border b--red-pink bg-black red-pink p-2" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
 
                         <article class="lg:mt-16 mt45-m mt-4 mw-90 mw-30-m mw-30-l hidden movie-list absolute bg-red-pink f3-l z-10 f4 p-2 rounded-b text-left shadow">

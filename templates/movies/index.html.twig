@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block numberOfMovies %}
+    {{ movies | length }}
+{% endblock %}
+
 {% block search %}
 
     {% for movie in movies %}
