@@ -69,7 +69,7 @@
     -o-transition:text-shadow 0.3s linear;
     transition:text-shadow 0.3s linear
 }
-.o-30:hover,.o-30:active,.o-30:focus{
+.opacity-30:hover,.opacity-30:active,.opacity-30:focus{
     opacity:1
 }
 .text-shadow:hover,.text-shadow:active,.text-shadow:focus{
