@@ -25,4 +25,25 @@ class MoviesController extends AbstractController
             'movies' => $movies,
         ]);
     }
+
+    /**
+     * @Route("/generate", name="generateStaticSite")
+     */
+    public function generateStaticSite()
+    {
+        $repository = $this->getDoctrine()->getRepository(Movie::class);
+        $movies = $repository->findBy([], ['id' => 'DESC']);
+
+        if(!$movies) {
+            throw $this->createNotFoundException('No movie data has been found.');
+        }
+
+        $content = $this->renderView('movies/index.html.twig', [
+            'movies' => $movies,
+        ]);
+
+        $file = file_put_contents('../docs/index.html', $content);
+
+        return $this->redirectToRoute('movies');
+    }
 }
