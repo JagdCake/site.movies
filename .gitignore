@@ -18,3 +18,4 @@
 ###< symfony/web-server-bundle ###
 TODO
 node_modules/
+main.css
