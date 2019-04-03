@@ -21,21 +21,21 @@
             <div class="mx-auto text-center">
                 <section class="movie-card bg-white py-4 mx-4 h-poster flex flex-wrap items-center border b--red-pink">
                     <div class="h-49p w-full flex flex-wrap">
-                        <h1 class="w-full self-center px-2 text-3xl">{{ movie.title }}</h1>
-                        <h2 class="text-lg font-normal w-full">{{ movie.yearOfRelease }}</h2>
+                        <h1 class="movie-title w-full self-center px-2 text-3xl">{{ movie.title }}</h1>
+                        <h2 class="year-of-release text-lg font-normal w-full">{{ movie.yearOfRelease }}</h2>
                     </div>
 
                     <div class="h-1p w-full border-b-2 border-black"></div>
 
                     <div class="h-1/2 w-full flex flex-wrap">
                          <div class="w-full self-center text-2xl">
-                            <h1 class="text-base font-normal">Directed by</h1>
+                            <h1 class="directors text-base font-normal">Directed by</h1>
                                 {% for director in movie.directors %}
                                     <p>
                                         <strong class="font-normal">{{ director }}</strong>
                                     </p>
                                 {% endfor %}
-                           <h2 class="text-base mt-3 font-normal">Starring</h2>
+                           <h2 class="top-actors text-base mt-3 font-normal">Starring</h2>
                                 <p>
                                     <em class="roman">{{ movie.topActors[0] }}</em>
                                 </p>
