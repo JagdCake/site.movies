@@ -60,7 +60,7 @@
 .oswald{
     font-family:'Oswald';
 }
-:target a img{
+:target .movie-card {
     -webkit-box-shadow:0 0 50px #D05353;
     box-shadow:0 0 50px #D05353
 }

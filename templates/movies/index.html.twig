@@ -19,7 +19,7 @@
     {% for movie in movies %}
         <article id="{{ movie.id }}" class="md:w-1/3 w-5/6">
             <div class="mx-auto text-center">
-                <section class="bg-white py-4 mx-4 h-poster flex flex-wrap items-center border b--red-pink">
+                <section class="movie-card bg-white py-4 mx-4 h-poster flex flex-wrap items-center border b--red-pink">
                     <div class="h-49p w-full flex flex-wrap">
                         <h1 class="w-full self-center px-2 text-3xl">{{ movie.title }}</h1>
                         <h2 class="text-lg font-normal w-full">{{ movie.yearOfRelease }}</h2>
