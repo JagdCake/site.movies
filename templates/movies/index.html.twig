@@ -7,8 +7,8 @@
 {% block search %}
 
     {% for movie in movies %}
-        <p>
-            <a href="#{{ movie.id }}" class="text-black my-3 underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
+        <p class="my-4">
+            <a href="#{{ movie.id }}" class="text-black  underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
         </p>
     {% endfor %}
 
@@ -63,7 +63,7 @@
 
         <div class="m-separator"></div>
         {% if loop.index != 0 and loop.index % 3 == 0 %}
-            <div class="separator w-full md:my-3"></div>
+            <div class="separator w-full md:my-4"></div>
         {% endif %}
     {% endfor %}
         
