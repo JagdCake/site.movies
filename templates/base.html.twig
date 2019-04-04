@@ -37,33 +37,33 @@
         <img class="w-full" src="images/up.svg" alt="up arrow icon">
     </button>
 
-    <div class="flex flex-wrap w-full lg:w-1/2 w-5/6">
+    <div class="flex flex-wrap w-full md:w-full lg2:w-2/3 xl:w-1/2 sm:w-5/6">
 
         <header class="w-full">
             <nav class="flex flex-wrap w-full">
                 <section class="w-full bg-red-pink text-center slackey leading-none rounded-b">
-                    <h1 class="lg:text-f1 text-2xl md:text-4xl my-4 lg:tracking-wider tracking-tight">
+                    <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-wider tracking-tight">
                         <a class="text-shadow text-black no-underline" href="/">I watched a Movie!</a>
                     </h1>
                 </section>
 
                 <article class="my-4 w-full flex flex-wrap justify-between my-2 mh0-ns">
-                    <button class="hover-button about-button pointer w-1/4 lg:w-24 h-16 w-10-ns rounded h-auto-m bg-red-pink bn" title="Toggle 'about' section">
+                    <button class="flex-0 hover-button about-button pointer w-1/4 sm:w-1/6 lg:w-24 md:h-16 h-12 lg2:rounded rounded-r h-auto-m bg-red-pink bn" title="Toggle 'about' section">
                         <img class="w-full h-full img-shadow" src="images/about.svg" alt="question mark icon">
                     </button>
 
-                    <section class="mt-3 md:mt-0 md:w-3/4 w-full rounded h-8 lg:h-16 md:h-auto bg-red-pink flex flex-wrap justify-center">
-                        <p class="movie-number slackey text-base tracking-tight md:text-xl m-2 md:m-0 lg:text-f3-vw self-center"><em class="roman">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
+                    <section class="flex-3 sm:flex-2 mt-4 sm:mt-0 sm:w-3/5 lg:w-3/4 w-full sm:rounded rounded-none h-12 lg:h-16 md:h-auto bg-red-pink flex flex-wrap justify-center">
+                        <p class="movie-number slackey text-lg tracking-tight md:text-2xl m-2 md:m-0 xl:text-f3-vw self-center"><em class="roman">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
                         <input class="hidden w-full rounded text-xl lg:text-f3-vw md:text-2xl border b--red-pink bg-black red-pink p-2" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
 
-                        <article class="lg:mt-16 mt45-m mt-4 mw-90 mw-30-m mw-30-l hidden movie-list absolute bg-red-pink lg:text-f3 z-20 text-xl p-2 rounded-b text-left shadow">
+                        <article class="lg:mt-16 mt-12 mt45-m mw-90 mw-30-m mw-30-l hidden movie-list absolute bg-red-pink lg:text-f3 z-20 text-xl p-2 rounded-b text-left shadow">
                             {% block search %}{% endblock %}
-                            <span class="no-results hidden text-black-black my-4">No results</span>
+                            <span class="no-results hidden text-black my-4">No results</span>
                         </article>
 
                     </section>
 
-                  <button class="hover-button search-button pointer w-1/4 lg:w-24 h-16 w-10-ns rounded h-auto-m bg-red-pink" title="Toggle search box">
+                  <button class="flex-2 sm:flex-3 hover-button search-button pointer w-1/4 sm:w-1/6 lg:w-24 md:h-16 h-12 lg2:rounded rounded-l h-auto-m bg-red-pink" title="Toggle search box">
                         <img class="search w-full h-full img-shadow" src="images/search.svg" alt="magnifying glass icon">
                     </button>
                 </article>
@@ -112,7 +112,7 @@
         </main>
 
         <footer class="w-full bg-red-pink text-center slackey leading-none rounded-t justify-center">
-            <h1 class="my-4 lg:text-f1 text-4xl tracking-wider">
+            <h1 class="my-4 lg2:text-f1 lg:text-4xl text-4xl tracking-wider">
                 <a class="text-shadow text-black no-underline" href="/">The End</a>
             </h1>
         </footer>

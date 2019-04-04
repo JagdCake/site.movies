@@ -7,7 +7,7 @@
 {% block search %}
 
     {% for movie in movies %}
-        <p class="my-4">
+        <p class="md:my-4 my-6">
             <a href="#{{ movie.id }}" class="text-black  underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
         </p>
     {% endfor %}
@@ -17,7 +17,7 @@
 {% block main %}
 
     {% for movie in movies %}
-        <article id="{{ movie.id }}" class="md:w-1/3 w-5/6">
+        <article id="{{ movie.id }}" class="md:w-1/3 w-90p sm:w-3/5">
             <div class="mx-auto text-center">
                 <section class="movie-card bg-white py-4 mx-4 h-poster flex flex-wrap items-center border b--red-pink">
                     <div class="h-49p w-full flex flex-wrap">
@@ -47,7 +47,7 @@
                 </section>
             </div>
 
-            <section class="vw-12 mw45 mw42-m text-2xl mx-auto lg:text-f2 mt-1 text-center">
+            <section class="movie-info xl:vw-12 lg:mw-30-l lg:w-2/3 mw45 text-3xl mx-auto xl:text-f2 mt-1 text-center">
                 <p class="my-rating bg-red-pink m-0 p-1 rounded-sm">{{ movie.myRating }}</p>
                 <p class="watched-on bg-red-pink m-0 p-1 rounded-sm">
                     <time datetime="{{ movie.watchedOn }}">{{ movie.watchedOn }}</time>
@@ -61,9 +61,9 @@
             </section>
         </article>
 
-        <div class="m-separator"></div>
+        <div class="m-separator md:no-m-separator"></div>
         {% if loop.index != 0 and loop.index % 3 == 0 %}
-            <div class="separator w-full md:my-4"></div>
+            <div class="md:separator w-full md:my-4"></div>
         {% endif %}
     {% endfor %}
         

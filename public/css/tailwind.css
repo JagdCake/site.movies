@@ -111,25 +111,13 @@ a img {
 .flex-none {
     flex: none;
 }
-.flex-0 {
-    order: 0;
-}
-.flex-1 {
-    order: 1;
-}
-.flex-2 {
-    order: 2;
-}
-.flex-3 {
-    order: 3;   
-}
 .bottom-1 {
     bottom: 1rem;
 }
 .right-1 {
     right: 1rem;
 }
-.vw-12 p:not(:last-of-type){
+.movie-info p:not(:last-of-type){
     border-bottom:1px solid #111
 }
 .transition-height {
@@ -145,7 +133,7 @@ a img {
     background-image:-o-linear-gradient(left,rgba(0,0,0,0),#D05353,rgba(0,0,0,0));
     background-image:linear-gradient(to right,rgba(0,0,0,0),#D05353,rgba(0,0,0,0))
 }
-@media screen and (max-width:30em){
+@responsive {
     .m-separator{
         margin-top:1rem;
         margin-bottom:1rem;
@@ -156,14 +144,31 @@ a img {
         background-image:-o-linear-gradient(left,rgba(0,0,0,0),#D05353,rgba(0,0,0,0));
         background-image:linear-gradient(to right,rgba(0,0,0,0),#D05353,rgba(0,0,0,0))
     }
+    .no-m-separator{
+        margin-top:0;
+        margin-bottom:0;
+        width:0;
+        height:0;
+        background-image:none;
+    }
+    .flex-0 {
+        order: 0;
+    }
+    .flex-1 {
+        order: 1;
+    }
+    .flex-2 {
+        order: 2;
+    }
+    .flex-3 {
+        order: 3;
+    }
     .mw45{
-        max-width:10rem
+        max-width:13rem
     }
     .mw-90{
         max-width:90%
     }
-}
-@media screen and (min-width:30em) and (max-width:60em){
     .separator{
         height:1px;
         background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),color-stop(#D05353),to(rgba(0,0,0,0)));
@@ -182,18 +187,6 @@ a img {
     }
     .mw-30-m{
         max-width:30rem
-    }
-}
-@media screen and (min-width:60em){
-    .separator{
-        height:1px;
-        background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),color-stop(#D05353),to(rgba(0,0,0,0)));
-        background-image:-webkit-linear-gradient(left,rgba(0,0,0,0),#D05353,rgba(0,0,0,0));
-        background-image:-o-linear-gradient(left,rgba(0,0,0,0),#D05353,rgba(0,0,0,0));
-        background-image:linear-gradient(to right,rgba(0,0,0,0),#D05353,rgba(0,0,0,0))
-    }
-    .mw-30-l {
-        max-width: 30%;
     }
     .vh-20{
         height:20vw
