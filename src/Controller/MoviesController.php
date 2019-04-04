@@ -31,7 +31,7 @@ class MoviesController extends AbstractController
      */
     public function javascriptLicenseInfo()
     {
-        return $this->render('javascript/javascript.html');
+        return $this->render('javascript.html');
     }
 
     /**
