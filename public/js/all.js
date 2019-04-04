@@ -107,46 +107,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Section: lazy load posters
-// Source: https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#inline_images
-// document.addEventListener('DOMContentLoaded', () => {
-    // let lazyImages = [].slice.call(document.querySelectorAll('.lazy'));
-    // let active = false;
-//
-    // const lazyLoad = () => {
-        // if (active === false) {
-            // active = true;
-//
-            // setTimeout(() => {
-                // lazyImages.forEach((lazyImage) => {
-                    // if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== 'none') {
-                        // lazyImage.src = lazyImage.dataset.src;
-                        // lazyImage.classList.remove('lazy');
-//
-                        // lazyImages = lazyImages.filter((image) => {
-                            // return image !== lazyImage;
-                        // });
-//
-                        // if (lazyImages.length === 0) {
-                            // window.removeEventListener('load', lazyLoad);
-                            // document.removeEventListener('scroll', lazyLoad);
-                            // window.removeEventListener('resize', lazyLoad);
-                            // window.removeEventListener('orientationchange', lazyLoad);
-                        // }
-                    // }
-                // });
-//
-                // active = false;
-            // }, 200);
-        // }
-    // };
-//
-    // window.addEventListener('load', lazyLoad);
-    // document.addEventListener('scroll', lazyLoad);
-    // window.addEventListener('resize', lazyLoad);
-    // window.addEventListener('orientationchange', lazyLoad);
-// });
-//
 // Section: Fonts Optimization for Repeat Views
 // Source: https://github.com/zachleat/web-font-loading-recipes/blob/master/critical-foft-data-uri.html
 (function() {
