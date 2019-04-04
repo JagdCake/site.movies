@@ -27,6 +27,14 @@ class MoviesController extends AbstractController
     }
 
     /**
+     * @Route("/javascript", name="javascriptLicenseInfo")
+     */
+    public function javascriptLicenseInfo()
+    {
+        return $this->render('javascript/javascript.html');
+    }
+
+    /**
      * @Route("/generate", name="generateStaticSite")
      */
     public function generateStaticSite()
