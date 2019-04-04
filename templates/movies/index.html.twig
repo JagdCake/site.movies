@@ -7,7 +7,7 @@
 {% block search %}
 
     {% for movie in movies %}
-        <p class="md:my-4 my-6">
+        <p class="md:my-5 my-6">
             <a href="#{{ movie.id }}" class="text-black  underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
         </p>
     {% endfor %}
@@ -47,7 +47,7 @@
                 </section>
             </div>
 
-            <section class="movie-info xl:vw-12 lg:mw-30-l lg:w-2/3 mw45 text-3xl mx-auto xl:text-f2 mt-1 text-center">
+            <section class="movie-info xl:vw-12 lg:mw-30 lg:w-2/3 mw-13 text-3xl mx-auto xl:text-f2 mt-1 text-center">
                 <p class="my-rating bg-red-pink m-0 p-1 rounded-sm">{{ movie.myRating }}</p>
                 <p class="watched-on bg-red-pink m-0 p-1 rounded-sm">
                     <time datetime="{{ movie.watchedOn }}">{{ movie.watchedOn }}</time>

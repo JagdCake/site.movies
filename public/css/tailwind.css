@@ -157,10 +157,10 @@ a img {
     .flex-3 {
         order: 3;
     }
-    .mw45{
+    .mw-13 {
         max-width:13rem
     }
-    .mw-90{
+    .mw-90 {
         max-width:90%
     }
     .separator{
@@ -170,25 +170,10 @@ a img {
         background-image:-o-linear-gradient(left,rgba(0,0,0,0),#D05353,rgba(0,0,0,0));
         background-image:linear-gradient(to right,rgba(0,0,0,0),#D05353,rgba(0,0,0,0))
     }
-    .mt45-m{
-        margin-top:3.5rem
-    }
-    .vw-40-m{
-        height:40vw
-    }
-    .mw42-m{
-        max-width:9.5rem
-    }
-    .mw-30-m{
-        max-width:30rem
-    }
-    .vh-20{
-        height:20vw
-    }
-    .vw-12{
+    .vw-12 {
         width:12vw
     }
-    .mw-30-l{
+    .mw-30 {
         max-width:30rem
     }
     .bottom-1 {

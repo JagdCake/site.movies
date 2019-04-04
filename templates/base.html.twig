@@ -56,7 +56,7 @@
                         <p class="movie-number slackey text-lg tracking-tight md:text-2xl m-2 md:m-0 xl:text-f3-vw self-center"><em class="roman">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
                         <input class="hidden w-full rounded text-xl lg:text-f3-vw md:text-2xl border b--red-pink bg-black red-pink p-2" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
 
-                        <article class="lg:mt-16 mt-12 mt45-m mw-90 mw-30-m mw-30-l hidden movie-list absolute bg-red-pink lg:text-f3 z-20 text-xl p-2 rounded-b text-left shadow">
+                        <article class="lg:mt-16 mt-12 md:mt-16 mw-90 md:mw-30 hidden movie-list absolute bg-red-pink lg:text-f3 z-20 text-xl p-2 rounded-b text-left shadow">
                             {% block search %}{% endblock %}
                             <span class="no-results hidden text-black my-4">No results</span>
                         </article>
