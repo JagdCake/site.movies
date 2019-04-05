@@ -12,7 +12,7 @@ use App\Repository\MovieRepository;
 class MoviesController extends AbstractController
 {
     /**
-     * @Route("/", name="movies", methods={"GET"})
+     * @Route("/movies", name="movies", methods={"GET"})
      */
     public function index(MovieRepository $repo): Response
     {
