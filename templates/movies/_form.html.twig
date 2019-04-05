@@ -1,5 +1,5 @@
 {{ form_start(form, {
-    'attr': {'class': 'mx-auto text-center p-12'}
+    'attr': {'class': 'text-center p-6'}
 }) }}
 
 {{ form_label(form.imdb_id, 'IMDb ID', {
@@ -9,5 +9,5 @@
     'attr': {'class': 'border-2 border-red text-2xl'}
 }) }}
 
-<div class="mt-12"></div>
+<div class="mt-6"></div>
 <button class="p-2 m-8 bg-blue rounded font-bold">{{ button_label|default('Add') }}</button>
