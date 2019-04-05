@@ -4,32 +4,27 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 use App\Entity\Movie;
+use App\Repository\MovieRepository;
 
 class MoviesController extends AbstractController
 {
     /**
      * @Route("/", name="movies")
      */
-    public function index()
+    public function index(MovieRepository $repo): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Movie::class);
-        $movies = $repository->findBy([], ['id' => 'DESC']);
-
-        if(!$movies) {
-            throw $this->createNotFoundException('No movie data has been found.');
-        }
-
         return $this->render('movies/index.html.twig', [
-            'movies' => $movies,
+            'movies' => $repo->findBy([], ['id' => 'DESC']),
         ]);
     }
 
     /**
      * @Route("/javascript", name="javascriptLicenseInfo")
      */
-    public function javascriptLicenseInfo()
+    public function javascriptLicenseInfo(): Response
     {
         return $this->render('javascript.html');
     }
@@ -37,17 +32,10 @@ class MoviesController extends AbstractController
     /**
      * @Route("/generate", name="generateStaticSite")
      */
-    public function generateStaticSite()
+    public function generateStaticSite(MovieRepository $repo): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Movie::class);
-        $movies = $repository->findBy([], ['id' => 'DESC']);
-
-        if(!$movies) {
-            throw $this->createNotFoundException('No movie data has been found.');
-        }
-
         $content = $this->renderView('movies/index.html.twig', [
-            'movies' => $movies,
+            'movies' => $repo->FindBy([], ['id' => 'DESC']),
         ]);
 
         $file = file_put_contents('../docs/index.html', $content);
