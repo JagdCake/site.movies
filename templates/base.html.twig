@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="/css/main.css"/>
   <title>{% block title %}I watched a Movie!{% endblock %}</title>
 </head>
-    
+{% block body %}
 <body class="bg-black text-black font-serif fast-transition flex justify-center">
 
     <button title="Back to Top" class="hidden go-up fixed bottom-1 right-1 md:bottom-2 md:right-2 p-2 bg-black rounded-full shadow-black z-10 opacity-30">
@@ -122,6 +122,9 @@
 
     </div>
 
-<script src="/js/all.js"></script>
+{% block javascript %}
+    <script src="/js/all.js"></script>
+{% endblock %}
 </body>
+{% endblock %}
 </html>
