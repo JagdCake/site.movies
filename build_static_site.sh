@@ -31,9 +31,11 @@ build_js() {
 }
 
 fix_paths() {
+    sed -i 's/\/css\/main.css/css/main.css/g' ./docs/index.html
+
     sed -i 's/href="\/javascript"/href="javascript.html"/g' ./docs/index.html
 
-    sed -i 's/js\/all.js"/js\/min.all.js"/g' ./docs/index.html
+    sed -i 's/\/js\/all.js"/js\/min.all.js"/g' ./docs/index.html
 }
 
 if [ ! -z "$1" ]; then
