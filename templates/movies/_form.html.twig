@@ -2,12 +2,19 @@
     'attr': {'class': 'text-center p-6'}
 }) }}
 
-{{ form_label(form.imdb_id, 'IMDb ID', {
-    'label_attr': {'class': 'text-2xl'}
-}) }}
-{{ form_widget(form.imdb_id, {
-    'attr': {'class': 'border-2 border-red text-2xl'}
-}) }}
+<article class="w-1/4 mx-auto flex flex-wrap justify-center">
+    <div class="text-left">
+        <div class="w-full">
+            {{ form_label(form.imdb_id, 'IMDb ID', {
+                'label_attr': {'class': 'text-2xl block'}
+            }) }}
+
+            {{ form_widget(form.imdb_id, {
+                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+            }) }}
+        </div>
+    </div>
+</article>
 
 <div class="mt-6"></div>
 <button class="p-2 m-8 bg-blue rounded font-bold">{{ button_label|default('Add') }}</button>
