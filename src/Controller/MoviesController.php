@@ -12,7 +12,7 @@ use App\Repository\MovieRepository;
 class MoviesController extends AbstractController
 {
     /**
-     * @Route("/", name="movies")
+     * @Route("/", name="movies", methods={"GET"})
      */
     public function index(MovieRepository $repo): Response
     {
@@ -22,7 +22,7 @@ class MoviesController extends AbstractController
     }
 
     /**
-     * @Route("/javascript", name="javascriptLicenseInfo")
+     * @Route("/javascript", name="javascriptLicenseInfo", methods={"GET"})
      */
     public function javascriptLicenseInfo(): Response
     {
@@ -30,7 +30,7 @@ class MoviesController extends AbstractController
     }
 
     /**
-     * @Route("/generate", name="generateStaticSite")
+     * @Route("/generate", name="generateStaticSite", methods={"GET"})
      */
     public function generateStaticSite(MovieRepository $repo): Response
     {
