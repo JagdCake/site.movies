@@ -12,6 +12,14 @@ uncomment() {
     sed -i 's/ -->//' ./docs/index.html
 }
 
+fix_paths() {
+    sed -i 's/\/css\/main.css/css\/main.css/g' ./docs/index.html
+
+    sed -i 's/href="\/javascript"/href="javascript.html"/g' ./docs/index.html
+
+    sed -i 's/\/js\/all.js"/js\/min.all.js"/g' ./docs/index.html
+}
+
 build_html() {
     build html ./docs/index.html ./docs/
     cp ./templates/javascript.html ./docs/
@@ -30,14 +38,6 @@ build_js() {
     build js ./docs/js/all.js ./docs/js/
 }
 
-fix_paths() {
-    sed -i 's/\/css\/main.css/css/main.css/g' ./docs/index.html
-
-    sed -i 's/href="\/javascript"/href="javascript.html"/g' ./docs/index.html
-
-    sed -i 's/\/js\/all.js"/js\/min.all.js"/g' ./docs/index.html
-}
-
 if [ ! -z "$1" ]; then
     "$1"
 else
@@ -45,10 +45,10 @@ else
     printf "  ./build_static_site.sh [FUNCTION NAME]\n\n"
     printf "Functions:\n"
     printf "  uncomment\n\n"
+    printf "  fix_paths\n\n"
     printf "  build_html\n\n"
     printf "  build_css\n\n"
     printf "  build_js\n\n"
-    printf "  fix_paths\n\n"
     printf "\n"
 
     exit 1
