@@ -38,11 +38,28 @@ build_js() {
     build js ./docs/js/all.js ./docs/js/
 }
 
+first_build() {
+    uncomment
+    fix_paths
+    build_html
+    build_css
+    build_js
+}
+
+update_build() {
+    uncomment
+    fix_paths
+    build_html
+}
+
 if [ ! -z "$1" ]; then
     "$1"
 else
     printf "Usage:\n"
     printf "  ./build_static_site.sh [FUNCTION NAME]\n\n"
+    printf "Grouped functions:\n"
+    printf "  first_build — when building for the first time\n\n"
+    printf "  update_build — after updating the site with new movies\n\n"
     printf "Functions:\n"
     printf "  uncomment\n\n"
     printf "  fix_paths\n\n"
