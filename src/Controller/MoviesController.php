@@ -67,6 +67,20 @@ class MoviesController extends AbstractController
     }
 
     /**
+     * @Route("/movies/{id}", name="deleteMovie", methods={"DELETE"})
+     */
+    public function delete(Request $request, Movie $movie): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$movie->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($movie);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('movies');
+    }
+
+    /**
      * @Route("/javascript", name="javascriptLicenseInfo", methods={"GET"})
      */
     public function javascriptLicenseInfo(): Response
