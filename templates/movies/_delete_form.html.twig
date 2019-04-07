@@ -1,5 +1,5 @@
 <form method="post" action="{{ path('deleteMovie', {'id': movie.id}) }}" onsubmit="return confirm('Delete {{ movie.title }}?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ movie.id) }}">
-    <button class="bg-red text-white no-underline p-2 rounded font-bold m-8">Delete</button>
+    <button class="bg-red text-white no-underline p-2 rounded font-bold m-8 mx-auto block">Delete</button>
 </form>
