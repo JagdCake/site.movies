@@ -67,13 +67,21 @@
         </div>
 
         <div class="w-full">
-            {{ form_label(form.directors[0], 'Director(s)', {
-                'label_attr': {'class': 'text-2xl block'}
+            {{ form_label(form.directors, 'Director(s)', {
+                'label_attr': {'class': 'text-2xl block', 'for': 'movie_directors_0'},
             }) }}
 
-            {{ form_widget(form.directors[0], {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
-            }) }}
+            {% if form.directors | length > 0 %}
+                {% for directorField in form.directors %}
+                    {{ form_widget(directorField, {
+                        'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                    }) }}
+                {% endfor %}
+            {% else %}
+                {{ form_widget(form.directors.vars.prototype, {
+                    'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                }) }}
+            {% endif %}
         </div>
 
         <div class="w-full">

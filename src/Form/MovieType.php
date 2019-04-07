@@ -24,7 +24,9 @@ class MovieType extends AbstractType
                 'entry_type' => TextType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
-                'data' => ['0' => ''],
+                'prototype' => true,
+                'prototype_name' => '0',
+                'prototype_data' => '',
             ])
             ->add('top_actors', CollectionType::class, [
                 'entry_type' => TextType::class,
