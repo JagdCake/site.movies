@@ -90,7 +90,8 @@
             }) }}
 
             {{ form_widget(form.top_actors[0], {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                'value': movie.topActors ? movie.topActors[0] : '',
             }) }}
         </div>
 
@@ -100,7 +101,8 @@
             }) }}
 
             {{ form_widget(form.top_actors[1], {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                'value': movie.topActors ? movie.topActors[1] : '',
             }) }}
         </div>
 
