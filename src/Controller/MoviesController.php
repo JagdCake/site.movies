@@ -47,6 +47,26 @@ class MoviesController extends AbstractController
     }
 
     /**
+     * @Route("/movies/{id}/edit", name="editMovie", methods={"GET","PUT"})
+     */
+    public function edit(Request $request, Movie $movie): Response
+    {
+        $form = $this->createForm(MovieType::class, $movie, array('method' => 'PUT'));
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirect('/movies'.'#'.$movie->getId());
+        }
+
+        return $this->render('movies/edit.html.twig', [
+            'movie' => $movie,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/javascript", name="javascriptLicenseInfo", methods={"GET"})
      */
     public function javascriptLicenseInfo(): Response
