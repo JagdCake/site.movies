@@ -9,6 +9,8 @@
     {{ include('movies/_form.html.twig', {'button_label': 'Edit', 'formMethod': 'PUT'}) }}
 
     <a class="bg-orange text-white no-underline p-2 rounded font-bold m-8" href="{{ path('movies') }}">Cancel</a>
+
+    {{ include('movies/_delete_form.html.twig') }}
 </body>
 {% endblock %}
 
