@@ -19,6 +19,17 @@ function addNewInput(addButton) {
         input.setAttribute('id', inputId.replace('0', newIndex));
         formSection.insertAdjacentElement('beforeend',input);
         input.value = '';
+
+        const removeButton = document.createElement('button');
+        removeButton.append(document.createTextNode('–'));
+        removeButton.setAttribute('type', 'button');
+        removeButton.className = 'text-2xl';
+
+        input.insertAdjacentElement('afterend', removeButton);
+        removeButton.addEventListener('click', () => {
+            input.nextElementSibling.remove();
+            input.remove();
+        });
     });
 }
 
