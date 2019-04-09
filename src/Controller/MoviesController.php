@@ -47,7 +47,7 @@ class MoviesController extends AbstractController
     }
 
     /**
-     * @Route("/movies/{id}/edit", name="editMovie", methods={"GET","PUT"})
+     * @Route("/movies/{id}/edit", name="editMovie", methods={"GET","PUT"}, requirements={"id"="\d{1,5}"})
      */
     public function edit(Request $request, Movie $movie): Response
     {
@@ -67,7 +67,7 @@ class MoviesController extends AbstractController
     }
 
     /**
-     * @Route("/movies/{id}", name="deleteMovie", methods={"DELETE"})
+     * @Route("/movies/{id}", name="deleteMovie", methods={"DELETE"}, requirements={"id"="\d{1,5}"})
      */
     public function delete(Request $request, Movie $movie): Response
     {
