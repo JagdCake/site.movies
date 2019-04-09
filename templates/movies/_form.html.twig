@@ -4,9 +4,8 @@
 }) }}
 {{ form_row(form._token) }}
 
-<article class="w-1/4 mx-auto flex flex-wrap justify-center">
+<article class="inline-block">
     <div class="text-left">
-        <div class="w-full">
             {{ form_label(form.imdb_id, 'IMDb ID', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -14,9 +13,7 @@
             {{ form_widget(form.imdb_id, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.title, 'Title', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -24,9 +21,7 @@
             {{ form_widget(form.title, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.year_of_release, 'Year', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -34,9 +29,7 @@
             {{ form_widget(form.year_of_release, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.runtime, 'Runtime (minutes)', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -44,9 +37,7 @@
             {{ form_widget(form.runtime, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.genre, 'Main genre', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -54,9 +45,7 @@
             {{ form_widget(form.genre, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.imdb_rating, 'IMDb rating', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -64,9 +53,8 @@
             {{ form_widget(form.imdb_rating, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full director-fields">
+        <div class="director-fields">
             {{ form_label(form.directors, 'Director(s)', {
                 'label_attr': {'class': 'text-2xl block', 'for': 'movie_directors_0'},
             }) }}
@@ -85,7 +73,6 @@
             <button type="button" class="add-director-field text-2xl">+</button>
         </div>
 
-        <div class="w-full">
             {{ form_label(form.top_actors[0], 'First top actor', {
                 'label_attr': {'class': 'text-2xl block'},
             }) }}
@@ -94,9 +81,7 @@
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'},
                 'value': movie.topActors ? movie.topActors[0] : '',
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.top_actors[1], 'Second top actor', {
                 'label_attr': {'class': 'text-2xl block'},
             }) }}
@@ -105,9 +90,7 @@
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'},
                 'value': movie.topActors ? movie.topActors[1] : '',
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.my_rating, 'My rating', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -115,9 +98,7 @@
             {{ form_widget(form.my_rating, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.watched_on, 'Watched on (date)', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -125,9 +106,7 @@
             {{ form_widget(form.watched_on, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
 
-        <div class="w-full">
             {{ form_label(form.discussion, 'Link to a discussion', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
@@ -135,7 +114,6 @@
             {{ form_widget(form.discussion, {
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
-        </div>
     </div>
 </article>
 
