@@ -6,6 +6,9 @@ function addNewInput(addButton) {
         const formField = formSection.querySelector('input');
 
         let index = formSection.querySelectorAll('input').length;
+        if(index > 2) {
+            return;
+        }
         const newIndex = index++;
 
         const input = formField.cloneNode(false);
