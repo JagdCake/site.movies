@@ -40,6 +40,10 @@
     <div class="flex flex-wrap w-full md:w-full lg2:w-2/3 xl:w-1/2 sm:w-5/6">
 
         <header class="w-full">
+            {% if app.request.get('_route') == 'movies' %}
+                <a class="no-underline text-black bg-yellow shadow-md text-2xl p-2 m-2 rounded-full absolute" href="{{ path('addMovie') }}">Add</a>
+            {% endif %}
+
             <nav class="flex flex-wrap w-full">
                 <section class="w-full bg-red-pink text-center slackey leading-none rounded-b">
                     <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-wider tracking-tight">
