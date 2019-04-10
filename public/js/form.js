@@ -1,31 +1,29 @@
 const addDirectorButton = document.querySelector('.add-director-field');
 
-function addNewInput(addButton) {
+function addNewField(addButton) {
     addButton.addEventListener('click', function() {
-        const formSection = this.parentElement;
-        const formField = formSection.querySelector('input');
-
+        const formField = this.parentElement;
+        const formSection = formField.parentElement;
         let index = formSection.querySelectorAll('input').length;
         if(index > 2) {
             return;
         }
         const newIndex = index++;
 
-        const input = formField.cloneNode(false);
+        const field = formField.cloneNode(true);
+        const input = field.querySelector('input');
         const inputName = input.getAttribute('name');
         const inputId = input.getAttribute('id');
 
+        formSection.insertAdjacentElement('beforeend', field);
         input.setAttribute('name', inputName.replace('0', newIndex));
         input.setAttribute('id', inputId.replace('0', newIndex));
-        formSection.insertAdjacentElement('beforeend',input);
         input.value = '';
 
-        const removeButton = document.createElement('button');
-        removeButton.append(document.createTextNode('–'));
-        removeButton.setAttribute('type', 'button');
-        removeButton.className = 'text-2xl';
+        const removeButton = field.querySelector('button');
+        removeButton.className = 'remove-director-button text-2xl';
+        removeButton.textContent = '–';
 
-        input.insertAdjacentElement('afterend', removeButton);
         removeButton.addEventListener('click', () => {
             input.nextElementSibling.remove();
             input.remove();
@@ -33,4 +31,4 @@ function addNewInput(addButton) {
     });
 }
 
-addNewInput(addDirectorButton);
+addNewField(addDirectorButton);
