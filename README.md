@@ -8,7 +8,7 @@
 
 #### Database:
 - open `.env` and edit `DATABASE_URL="db_driver://db_user:db_password@db_host:db_port/db_name"`, e.g. `postgres://jagdcake:password@127.0.0.1:5432/movies`
-- extract the database dump `tar -xzvf database.dump.tar.gz`
+- extract the database dump `tar -xavf database_dump.movies.tar.xz`
 - import the database dump using `psql -U db_user -d db_name -1 -f movies_dump`
 
 #### Tailwind CSS
