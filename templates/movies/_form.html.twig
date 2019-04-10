@@ -54,23 +54,32 @@
                 'attr': {'class': 'border-2 text-xl p-2 mb-4'}
             }) }}
 
-        <div class="director-fields">
+        <div class="director-section">
             {{ form_label(form.directors, 'Director(s), (max. 3)', {
                 'label_attr': {'class': 'text-2xl block', 'for': 'movie_directors_0'},
             }) }}
 
-            {% if form.directors | length > 0 %}
-                {% for directorField in form.directors %}
-                    {{ form_widget(directorField, {
-                        'attr': {'class': 'border-2 text-xl p-2 mb-4'},
-                    }) }}
-                {% endfor %}
-            {% else %}
-                {{ form_widget(form.directors.vars.prototype, {
-                    'attr': {'class': 'border-2 text-xl p-2 mb-4 block'},
-                }) }}
-            {% endif %}
-            <button type="button" class="add-director-field text-2xl">+</button>
+                {% if form.directors | length > 0 %}
+                    {% for directorField in form.directors %}
+                        <div class="director-input">
+                            {{ form_widget(directorField, {
+                                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                            }) }}
+                            {% if loop.index == 1 %}
+                                <button type="button" class="add-director-field text-2xl">+</button>
+                            {% else %}
+                                <button type="button" class="remove-director-field text-2xl">–</button>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="director-input">
+                        {{ form_widget(form.directors.vars.prototype, {
+                            'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                        }) }}
+                        <button type="button" class="add-director-field text-2xl">+</button>
+                    </div>
+                {% endif %}
         </div>
 
             {{ form_label(form.top_actors[0], 'First top actor', {
