@@ -31,4 +31,16 @@ function addNewField(addButton) {
     });
 }
 
-addNewField(addDirectorButton);
+function main() {
+    addNewField(addDirectorButton);
+
+    const allRemoveButtons = document.querySelectorAll('.remove-director-field');
+    for(let removeButton of allRemoveButtons) {
+        removeButton.addEventListener('click', function()  {
+            this.previousElementSibling.remove();
+            this.remove();
+        });
+    }
+}
+
+main();
