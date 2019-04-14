@@ -4,11 +4,12 @@ function addNewField(addButton) {
     addButton.addEventListener('click', function() {
         const formField = this.parentElement;
         const formSection = formField.parentElement;
-        let index = formSection.querySelectorAll('input').length;
-        if(index > 2) {
+        const inputs = formSection.querySelectorAll('input');
+        let index = inputs[inputs.length - 1].getAttribute('name').slice(-2, -1);
+        if(inputs.length > 2) {
             return;
         }
-        const newIndex = index++;
+        const newIndex = ++index;
 
         const field = formField.cloneNode(true);
         const input = field.querySelector('input');
