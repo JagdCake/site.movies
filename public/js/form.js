@@ -1,5 +1,3 @@
-const addDirectorButton = document.querySelector('.add-director-field');
-
 function addNewField(addButton) {
     addButton.addEventListener('click', function() {
         const formField = this.parentElement;
@@ -33,6 +31,7 @@ function addNewField(addButton) {
 }
 
 function main() {
+    const addDirectorButton = document.querySelector('.add-director-field');
     addNewField(addDirectorButton);
 
     const allRemoveButtons = document.querySelectorAll('.remove-director-field');
