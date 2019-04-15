@@ -67,8 +67,8 @@ function main() {
         addNewField(this.parentElement);
     });
 
-    const allRemoveButtons = document.querySelectorAll('.button-remove-director');
-    for(let removeButton of allRemoveButtons) {
+    const removeDirectorButtons = document.querySelectorAll('.button-remove-director');
+    for(let removeButton of removeDirectorButtons) {
         removeParentOnClick(removeButton);
     }
 }
