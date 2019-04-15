@@ -10,6 +10,14 @@ function generateFieldIndex(fields) {
     };
 }
 
+function cloneAndInsertField(fieldToClone, parentElement) {
+    const field = fieldToClone.cloneNode(true);
+
+    parentElement.insertAdjacentElement('beforeend', field);
+
+    return field;
+}
+
 function addNewField(addButton) {
     addButton.addEventListener('click', function() {
         const formField = this.parentElement;
@@ -19,17 +27,16 @@ function addNewField(addButton) {
             return;
         }
 
-        const field = formField.cloneNode(true);
-        const input = field.querySelector('input');
+        const newField = cloneAndInsertField(formField, formSection);
+
+        const input = newField.querySelector('input');
         const inputName = input.getAttribute('name');
         const inputId = input.getAttribute('id');
-
-        formSection.insertAdjacentElement('beforeend', field);
         input.setAttribute('name', inputName.replace('0', fieldIndex.i));
         input.setAttribute('id', inputId.replace('0', fieldIndex.i));
         input.value = '';
 
-        const removeButton = field.querySelector('button');
+        const removeButton = newField.querySelector('button');
         removeButton.className = 'remove-director-button text-2xl';
         removeButton.textContent = '–';
 
