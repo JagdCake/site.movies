@@ -36,6 +36,12 @@ function changeIntoRemoveButton(button) {
     button.textContent = '–';
 }
 
+function removeParentOnClick(buttonToClick) {
+    buttonToClick.addEventListener('click', function() {
+        this.parentElement.remove();
+    });
+}
+
 function addNewField(addButton) {
     addButton.addEventListener('click', function() {
         const formField = this.parentElement;
@@ -50,11 +56,8 @@ function addNewField(addButton) {
 
         const fieldButton = newField.querySelector('button');
         changeIntoRemoveButton(fieldButton);
-
-        fieldButton.addEventListener('click', () => {
-            updatedInput.nextElementSibling.remove();
-            updatedInput.remove();
-        });
+        // remove the parent of the button (the new field)
+        removeParentOnClick(fieldButton);
     });
 }
 
@@ -64,10 +67,7 @@ function main() {
 
     const allRemoveButtons = document.querySelectorAll('.button-remove-director');
     for(let removeButton of allRemoveButtons) {
-        removeButton.addEventListener('click', function()  {
-            this.previousElementSibling.remove();
-            this.remove();
-        });
+        removeParentOnClick(removeButton);
     }
 }
 
