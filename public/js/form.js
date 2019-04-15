@@ -30,6 +30,12 @@ function updateFieldInput(field, updatedIndex) {
     return input;
 }
 
+function changeIntoRemoveButton(button) {
+    button.classList.remove('button-add-director');
+    button.classList.add('button-remove-director');
+    button.textContent = '–';
+}
+
 function addNewField(addButton) {
     addButton.addEventListener('click', function() {
         const formField = this.parentElement;
@@ -42,11 +48,10 @@ function addNewField(addButton) {
         const newField = cloneAndInsertField(formField, formSection);
         const updatedInput = updateFieldInput(newField, fieldIndex.i);
 
-        const removeButton = newField.querySelector('button');
-        removeButton.className = 'remove-director-button text-2xl';
-        removeButton.textContent = '–';
+        const fieldButton = newField.querySelector('button');
+        changeIntoRemoveButton(fieldButton);
 
-        removeButton.addEventListener('click', () => {
+        fieldButton.addEventListener('click', () => {
             updatedInput.nextElementSibling.remove();
             updatedInput.remove();
         });
