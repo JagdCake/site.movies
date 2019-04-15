@@ -10,10 +10,10 @@ function generateFieldIndex(fields) {
     };
 }
 
-function cloneAndInsertField(fieldToClone, parentElement) {
+function cloneAndInsertField(fieldToClone, elementToInsertInto) {
     const field = fieldToClone.cloneNode(true);
 
-    parentElement.insertAdjacentElement('beforeend', field);
+    elementToInsertInto.insertAdjacentElement('beforeend', field);
 
     return field;
 }
