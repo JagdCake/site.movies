@@ -42,28 +42,30 @@ function removeParentOnClick(buttonToClick) {
     });
 }
 
-function addNewField(addButton) {
-    addButton.addEventListener('click', function() {
-        const formField = this.parentElement;
-        const formSection = formField.parentElement;
-        const fieldIndex = generateFieldIndex(formSection);
-        if(fieldIndex.numOfInputs > 2) {
-            return;
-        }
+function addNewField(field) {
+    const section = field.parentElement;
 
-        const newField = cloneAndInsertField(formField, formSection);
-        const updatedInput = updateFieldInput(newField, fieldIndex.i);
+    const fieldIndex = generateFieldIndex(section);
 
-        const fieldButton = newField.querySelector('button');
-        changeIntoRemoveButton(fieldButton);
-        // remove the parent of the button (the new field)
-        removeParentOnClick(fieldButton);
-    });
+    if(fieldIndex.numOfInputs > 2) {
+        return;
+    }
+
+    const newField = cloneAndInsertField(field, section);
+    const updatedInput = updateFieldInput(newField, fieldIndex.i);
+
+    const fieldButton = newField.querySelector('button');
+    changeIntoRemoveButton(fieldButton);
+    // remove the parent of the button (the new field)
+    removeParentOnClick(fieldButton);
 }
 
 function main() {
     const addDirectorButton = document.querySelector('.button-add-director');
-    addNewField(addDirectorButton);
+    addDirectorButton.addEventListener('click', function() {
+        // use the first director field to create a new one
+        addNewField(this.parentElement);
+    });
 
     const allRemoveButtons = document.querySelectorAll('.button-remove-director');
     for(let removeButton of allRemoveButtons) {
