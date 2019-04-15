@@ -1,13 +1,7 @@
-function generateFieldIndex(fields) {
-    const inputs = fields.querySelectorAll('input');
-    const numOfInputs = inputs.length;
+function generateInputIndexFrom(inputs) {
     // selects the '0' from movie[directors][0]
-    let index = inputs[numOfInputs - 1].getAttribute('name').slice(-2, -1);
-
-    return {
-        numOfInputs: numOfInputs,
-        i: ++index,
-    };
+    let oldIndex = inputs[inputs.length - 1].getAttribute('name').slice(-2, -1);
+    return ++oldIndex;
 }
 
 function cloneAndInsertField(fieldToClone, elementToInsertInto) {
@@ -26,8 +20,6 @@ function updateFieldInput(field, updatedIndex) {
     input.setAttribute('name', inputName.replace('0', updatedIndex));
     input.setAttribute('id', inputId.replace('0', updatedIndex));
     input.value = '';
-
-    return input;
 }
 
 function changeIntoRemoveButton(button) {
@@ -45,14 +37,15 @@ function removeParentOnClick(buttonToClick) {
 function addNewField(field) {
     const section = field.parentElement;
 
-    const fieldIndex = generateFieldIndex(section);
+    const sectionInputs = section.querySelectorAll('input');
 
-    if(fieldIndex.numOfInputs > 2) {
+    if(sectionInputs.length > 2) {
         return;
     }
 
     const newField = cloneAndInsertField(field, section);
-    const updatedInput = updateFieldInput(newField, fieldIndex.i);
+    const newFieldInputIndex = generateInputIndexFrom(sectionInputs);
+    updateFieldInput(newField, newFieldInputIndex);
 
     const fieldButton = newField.querySelector('button');
     changeIntoRemoveButton(fieldButton);
