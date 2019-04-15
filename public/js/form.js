@@ -1,13 +1,23 @@
+function generateFieldIndex(fields) {
+    const inputs = fields.querySelectorAll('input');
+    const numOfInputs = inputs.length;
+    // selects the '0' from movie[directors][0]
+    let index = inputs[numOfInputs - 1].getAttribute('name').slice(-2, -1);
+
+    return {
+        numOfInputs: numOfInputs,
+        i: ++index,
+    };
+}
+
 function addNewField(addButton) {
     addButton.addEventListener('click', function() {
         const formField = this.parentElement;
         const formSection = formField.parentElement;
-        const inputs = formSection.querySelectorAll('input');
-        let index = inputs[inputs.length - 1].getAttribute('name').slice(-2, -1);
-        if(inputs.length > 2) {
+        const fieldIndex = generateFieldIndex(formSection);
+        if(fieldIndex.numOfInputs > 2) {
             return;
         }
-        const newIndex = ++index;
 
         const field = formField.cloneNode(true);
         const input = field.querySelector('input');
@@ -15,8 +25,8 @@ function addNewField(addButton) {
         const inputId = input.getAttribute('id');
 
         formSection.insertAdjacentElement('beforeend', field);
-        input.setAttribute('name', inputName.replace('0', newIndex));
-        input.setAttribute('id', inputId.replace('0', newIndex));
+        input.setAttribute('name', inputName.replace('0', fieldIndex.i));
+        input.setAttribute('id', inputId.replace('0', fieldIndex.i));
         input.value = '';
 
         const removeButton = field.querySelector('button');
