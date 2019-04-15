@@ -54,10 +54,10 @@ function addNewField(addButton) {
 }
 
 function main() {
-    const addDirectorButton = document.querySelector('.add-director-field');
+    const addDirectorButton = document.querySelector('.button-add-director');
     addNewField(addDirectorButton);
 
-    const allRemoveButtons = document.querySelectorAll('.remove-director-field');
+    const allRemoveButtons = document.querySelectorAll('.button-remove-director');
     for(let removeButton of allRemoveButtons) {
         removeButton.addEventListener('click', function()  {
             this.previousElementSibling.remove();

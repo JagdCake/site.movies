@@ -61,23 +61,23 @@
 
                 {% if form.directors | length > 0 %}
                     {% for directorField in form.directors %}
-                        <div class="director-input">
+                        <div class="director-field">
                             {{ form_widget(directorField, {
                                 'attr': {'class': 'border-2 text-xl p-2 mb-4'},
                             }) }}
                             {% if loop.index == 1 %}
-                                <button type="button" class="add-director-field text-2xl">+</button>
+                                <button type="button" class="button-add-director text-2xl">+</button>
                             {% else %}
-                                <button type="button" class="remove-director-field text-2xl">–</button>
+                                <button type="button" class="button-remove-director text-2xl">–</button>
                             {% endif %}
                         </div>
                     {% endfor %}
                 {% else %}
-                    <div class="director-input">
+                    <div class="director-field">
                         {{ form_widget(form.directors.vars.prototype, {
                             'attr': {'class': 'border-2 text-xl p-2 mb-4'},
                         }) }}
-                        <button type="button" class="add-director-field text-2xl">+</button>
+                        <button type="button" class="button-add-director text-2xl">+</button>
                     </div>
                 {% endif %}
         </div>
