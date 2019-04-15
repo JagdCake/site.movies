@@ -34,17 +34,15 @@ function removeParentOnClick(buttonToClick) {
     });
 }
 
-function addNewField(field) {
-    const section = field.parentElement;
+function addNewField(field, fieldSection) {
+    const fieldSectionInputs = fieldSection.querySelectorAll('input');
 
-    const sectionInputs = section.querySelectorAll('input');
-
-    if(sectionInputs.length > 2) {
+    if(fieldSectionInputs.length > 2) {
         return;
     }
 
-    const newField = cloneAndInsertField(field, section);
-    const newFieldInputIndex = generateInputIndexFrom(sectionInputs);
+    const newField = cloneAndInsertField(field, fieldSection);
+    const newFieldInputIndex = generateInputIndexFrom(fieldSectionInputs);
     updateFieldInput(newField, newFieldInputIndex);
 
     const fieldButton = newField.querySelector('button');
@@ -56,8 +54,9 @@ function addNewField(field) {
 function main() {
     const addDirectorButton = document.querySelector('.button-add-director');
     addDirectorButton.addEventListener('click', function() {
-        // use the first director field to create a new one
-        addNewField(this.parentElement);
+        const directorField = this.parentElement;
+        const directorSection = directorField.parentElement;
+        addNewField(directorField, directorSection);
     });
 
     const removeDirectorButtons = document.querySelectorAll('.button-remove-director');
