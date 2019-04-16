@@ -12,13 +12,15 @@ function cloneAndInsertField(fieldToClone, elementToInsertInto) {
     return field;
 }
 
-function updateFieldInput(field, updatedIndex) {
-    const input = field.querySelector('input');
+function updateInputIndexAndValue(input, updatedIndex) {
     const inputName = input.getAttribute('name');
     const inputId = input.getAttribute('id');
 
-    input.setAttribute('name', inputName.replace('0', updatedIndex));
-    input.setAttribute('id', inputId.replace('0', updatedIndex));
+    const newNameIndex = inputName.replace('0', updatedIndex);
+    const newIdIndex = inputId.replace('0', updatedIndex);
+
+    input.setAttribute('name', newNameIndex);
+    input.setAttribute('id', newIdIndex);
     input.value = '';
 }
 
@@ -43,7 +45,9 @@ function addNewField(field, fieldSection) {
 
     const newField = cloneAndInsertField(field, fieldSection);
     const newFieldInputIndex = generateInputIndexFrom(fieldSectionInputs);
-    updateFieldInput(newField, newFieldInputIndex);
+
+    const newInput = newField.querySelector('input');
+    updateInputIndexAndValue(newInput, newFieldInputIndex);
 
     const fieldButton = newField.querySelector('button');
     changeIntoRemoveButton(fieldButton);
