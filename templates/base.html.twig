@@ -31,11 +31,13 @@
   <title>{% block title %}I watched a Movie!{% endblock %}</title>
 </head>
 {% block body %}
-<body class="bg-black text-black font-serif fast-transition flex justify-center">
+<body id="#top" class="bg-black text-black font-serif fast-transition flex justify-center">
 
-    <button title="Back to Top" class="hidden go-up fixed bottom-1 right-1 md:bottom-2 md:right-2 p-2 bg-black rounded-full shadow-black z-10 opacity-30">
-        <img class="w-full" src="images/up.svg" alt="up arrow icon">
-    </button>
+    <a href="#top">
+        <button title="Back to Top" class="hidden go-up fixed bottom-1 right-1 md:bottom-2 md:right-2 p-2 bg-black rounded-full shadow-black z-10 opacity-30">
+            <img class="w-full" src="images/up.svg" alt="up arrow icon">
+        </button>
+    </a>
 
     <div class="flex flex-wrap w-full md:w-full lg2:w-2/3 xl:w-1/2 sm:w-5/6">
 

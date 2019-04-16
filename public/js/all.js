@@ -99,9 +99,6 @@ window.addEventListener('scroll', () => {
 
     if(window.pageYOffset >= 1200) {
         buttonUp.classList.remove('hidden');
-        buttonUp.addEventListener('click', () => {
-            document.documentElement.scrollTop = 0;
-        });
     }else {
         buttonUp.classList.add('hidden');
     }
