@@ -16,5 +16,10 @@ class MoviesControllerTest extends WebTestCase {
             301,
             $response->getStatusCode()
         );
+
+        $this->assertEquals(
+            'http://localhost/movies',
+            $response->headers->get('location')
+        );
     }
 }
