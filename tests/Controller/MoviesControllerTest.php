@@ -36,4 +36,22 @@ class MoviesControllerTest extends WebTestCase {
             $crawler->filter('article[id]')->count(), // number of movie cards
         );
     }
+
+    public function testAddFormAttributes() {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/movies/add');
+
+        $form = $crawler->filter('form[name="movie"]')->form();
+
+        $this->assertEquals(
+            'POST',
+            $form->getMethod(),
+        );
+
+        $this->assertEquals(
+            'http://localhost/movies/add',
+            $form->getUri(), // the form's action attribute
+        );
+    }
 }
