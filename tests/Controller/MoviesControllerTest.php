@@ -6,6 +6,20 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class MoviesControllerTest extends WebTestCase {
 
+    private $fakeMovieData = [
+        'movie[imdb_id]' => 'tt0000003',
+        'movie[title]' => 'Test Movie 3',
+        'movie[runtime]' => 3,
+        'movie[genre]' => 'testGenre',
+        'movie[imdb_rating]' => 1.3,
+        'movie[year_of_release]' => 2003,
+        'movie[directors]' => ['Test Director'],
+        'movie[top_actors]' => ['Test Actor 1', 'Test Actor 2'],
+        'movie[my_rating]' => 'Test Onion',
+        'movie[watched_on]' => '03 Apr 2019',
+        'movie[discussion]' => 'test link',
+    ];
+
     public function testRootRedirect() {
         $client = static::createClient();
 
