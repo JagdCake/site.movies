@@ -67,5 +67,32 @@ class MoviesControllerTest extends WebTestCase {
             'http://localhost/movies/add',
             $form->getUri(), // the form's action attribute
         );
+
+        return (object)[
+            'form' => $form,
+            'client' => $client,
+        ];
+    }
+
+    /**
+     * @depends testAddFormAttributes
+     */
+    public function testAddingAMovie(object $addRoute) {
+        $form = $addRoute->form;
+        $client = $addRoute->client;
+
+        $form->setValues($this->fakeMovieData);
+        $client->submit($form);
+
+        $this->assertTrue(
+            $client->getResponse()->isRedirect(),
+            'Controller should redirect on successful submit'
+        );
+
+        $crawler = $client->followRedirect();
+        $this->assertEquals(
+            $this->fakeMovieData['movie[title]'],
+            $crawler->filter('.movie-title')->first()->text(),
+        );
     }
 }
