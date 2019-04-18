@@ -21,5 +21,19 @@ class MoviesControllerTest extends WebTestCase {
             'http://localhost/movies',
             $response->headers->get('location')
         );
+
+        return $client;
+    }
+
+    /**
+     * @depends testRootRedirect
+     */
+    public function testMoviesAreFetchedFromDb($client) {
+        $crawler = $client->followRedirect();
+
+        $this->assertEquals(
+            3,
+            $crawler->filter('article[id]')->count(), // number of movie cards
+        );
     }
 }
