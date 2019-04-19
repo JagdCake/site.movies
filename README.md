@@ -28,3 +28,5 @@
 - execute the migrations `bin/console -e test doctrine:migrations:migrate`
 - load the movie data fixture `bin/console -e test doctrine:fixtures:load`
 - run `bin/phpunit` or `bin/phpunit --testdox` (displays an overview of the test cases)
+    - [Controller tests](./tests/Controller/) (fast) use Symfony's default testing components: [BrowserKit](https://symfony.com/doc/current/components/browser_kit.html) and [DomCrawler](https://symfony.com/doc/current/components/dom_crawler.html)
+    - [JavaScript functionality tests](./tests/JavaScript/) (slow) use [Symfony Panther](https://github.com/symfony/panther)
