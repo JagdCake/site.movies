@@ -97,6 +97,7 @@ class MoviesControllerTest extends WebTestCase {
         $this->assertEquals(
             date('d M Y'), // today's date
             $crawler->filter('.watched-on time')->first()->text(),
+            'The watched_on date of the newly added movie should equal today\'s date',
         );
     }
 }
