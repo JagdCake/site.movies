@@ -113,7 +113,8 @@
             }) }}
 
             {{ form_widget(form.watched_on, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                'value': movie.watchedOn ? movie.watchedOn : 'now' | date('d M Y'),
             }) }}
 
             {{ form_label(form.discussion, 'Link to a discussion', {
