@@ -4,7 +4,7 @@ namespace App\Tests\JavaScript;
 
 use Symfony\Component\Panther\PantherTestCase;
 
-class MoviesControllerTest extends PantherTestCase {
+class FormFunctionalityTest extends PantherTestCase {
 
     public function testAddingDirectorFieldsWorks() {
         $client = static::createPantherClient();
@@ -29,5 +29,22 @@ class MoviesControllerTest extends PantherTestCase {
         );
 
         return $crawler;
+    }
+
+    /**
+     * @depends testAddingDirectorFieldsWorks
+     */
+    public function testRemovingDirectorFieldsWorks($crawler) {
+        $removeDirectorButton = $crawler->filter('.button-remove-director');
+        $removeDirectorButton->click();
+        // clicking on the remove button also removes the button itself
+        $removeDirectorButton = $crawler->filter('.button-remove-director');
+        $removeDirectorButton->click();
+
+        $this->assertEquals(
+            1,
+            $crawler->filter('.director-field')->count(),
+            'There should be one director field after removing the other two',
+        );
     }
 }
