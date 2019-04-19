@@ -15,8 +15,7 @@ class MoviesControllerTest extends WebTestCase {
         'movie[year_of_release]' => 2003,
         'movie[directors]' => ['Test Director'],
         'movie[top_actors]' => ['Test Actor 1', 'Test Actor 2'],
-        'movie[my_rating]' => 'Test Onion',
-        'movie[watched_on]' => '03 Apr 2019',
+        'movie[my_rating]' => 'Great Onion',
         'movie[discussion]' => 'test link',
     ];
 
@@ -93,6 +92,11 @@ class MoviesControllerTest extends WebTestCase {
         $this->assertEquals(
             $this->fakeMovieData['movie[title]'],
             $crawler->filter('.movie-title')->first()->text(),
+        );
+
+        $this->assertEquals(
+            date('d M Y'), // today's date
+            $crawler->filter('.watched-on time')->first()->text(),
         );
     }
 }
