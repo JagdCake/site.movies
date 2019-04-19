@@ -19,7 +19,7 @@ class MoviesControllerTest extends WebTestCase {
         'movie[discussion]' => 'test link',
     ];
 
-    public function testRootRedirect() {
+    public function testRootRedirectWorks() {
         $client = static::createClient();
 
         $client->request('GET', '/');
@@ -39,9 +39,9 @@ class MoviesControllerTest extends WebTestCase {
     }
 
     /**
-     * @depends testRootRedirect
+     * @depends testRootRedirectWorks
      */
-    public function testMoviesAreFetchedFromDb($client) {
+    public function testAllMoviesAreFetchedFromDb($client) {
         $crawler = $client->followRedirect();
 
         $this->assertEquals(
@@ -50,7 +50,7 @@ class MoviesControllerTest extends WebTestCase {
         );
     }
 
-    public function testAddFormAttributes() {
+    public function testAddFormAttributesAreCorrect() {
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/movies/add');
@@ -74,9 +74,9 @@ class MoviesControllerTest extends WebTestCase {
     }
 
     /**
-     * @depends testAddFormAttributes
+     * @depends testAddFormAttributesAreCorrect
      */
-    public function testAddingAMovie(object $addRoute) {
+    public function testAddingAMovieWorks(object $addRoute) {
         $form = $addRoute->form;
         $client = $addRoute->client;
 
