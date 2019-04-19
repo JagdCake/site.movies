@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class MovieType extends AbstractType
 {
@@ -35,10 +36,19 @@ class MovieType extends AbstractType
                     '1' => '',
                 ],
             ])
-            ->add('my_rating')
+            ->add('my_rating', ChoiceType::class, [
+                'choices' => [
+                    'Bad Eggplant' => 'Bad Eggplant',
+                    'Decent Carrot' => 'Decent Carrot',
+                    'Good Tomato' => 'Good Tomato',
+                    'Great Onion' => 'Great Onion',
+                    'Amazing Savory' => 'Amazing Savory',
+                    'Sublime Lettuce' => 'Sublime Lettuce',
+                ],
+                'preferred_choices' => ['Great Onion'],
+            ])
             ->add('watched_on')
-            ->add('discussion')
-        ;
+            ->add('discussion');
     }
 
     public function configureOptions(OptionsResolver $resolver)
