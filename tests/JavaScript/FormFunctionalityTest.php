@@ -35,11 +35,8 @@ class FormFunctionalityTest extends PantherTestCase {
      * @depends testAddingDirectorFieldsWorks
      */
     public function testRemovingDirectorFieldsWorks($crawler) {
-        $removeDirectorButton = $crawler->filter('.button-remove-director');
-        $removeDirectorButton->click();
-        // clicking on the remove button also removes the button itself
-        $removeDirectorButton = $crawler->filter('.button-remove-director');
-        $removeDirectorButton->click();
+        $crawler->filter('.button-remove-director')->click();
+        $crawler->filter('.button-remove-director')->click();
 
         $this->assertEquals(
             1,
