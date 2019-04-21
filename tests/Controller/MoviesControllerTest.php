@@ -137,5 +137,21 @@ class MoviesControllerTest extends WebTestCase {
             $form->getValues()['movie[title]'],
             'The data of the movie to edit should be displayed'
         );
+
+        $form->setValues([
+            'movie[title]' => 'Edit Movie 0',
+        ]);
+        $client->submit($form);
+
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/movies#1'),
+            'Controller should redirect to the updated movie on successful submit'
+        );
+
+        $crawler = $client->followRedirect();
+        $this->assertEquals(
+            'Edit Movie 0',
+            $crawler->filter('article[id="1"] .movie-title')->text(),
+        );
     }
 }
