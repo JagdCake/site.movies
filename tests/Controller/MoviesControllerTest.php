@@ -124,4 +124,18 @@ class MoviesControllerTest extends WebTestCase {
             'form' => $form,
         ];
     }
+
+    /**
+     * @depends testEditFormAttributesAreCorrect
+     */
+    public function testEditingAMovieWorks(object $editRoute) {
+        $client = $editRoute->client;
+        $form = $editRoute->form;
+
+        $this->assertEquals(
+            'Test Movie 0',
+            $form->getValues()['movie[title]'],
+            'The data of the movie to edit should be displayed'
+        );
+    }
 }
