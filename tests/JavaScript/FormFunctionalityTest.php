@@ -44,4 +44,19 @@ class FormFunctionalityTest extends PantherTestCase {
             'There should be one director field after removing the other two',
         );
     }
+
+    public function testDeleteButtonWorks() {
+        $client = static::createPantherClient();
+
+        $crawler = $client->request('GET', '/movies/3/edit');
+
+        $crawler->selectButton('Delete')->click();
+
+        $confirmationMessage = $client->switchTo()->alert()->getText();
+
+        $this->assertEquals(
+            'Delete Test Movie 2?',
+            $confirmationMessage,
+        );
+    }
 }
