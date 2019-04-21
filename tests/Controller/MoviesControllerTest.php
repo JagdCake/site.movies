@@ -100,4 +100,28 @@ class MoviesControllerTest extends WebTestCase {
             'The watched_on date of the newly added movie should equal today\'s date',
         );
     }
+
+    public function testEditFormAttributesAreCorrect() {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/movies/1/edit');
+
+        $this->assertEquals(
+            'PUT',
+            $crawler->filter('input[name="_method"]')->attr('value'),
+            'Symfony should insert an input with the correct form method'
+        );
+
+        $form = $crawler->filter('form[name="movie"]')->form();
+
+        $this->assertEquals(
+            'http://localhost/movies/1/edit',
+            $form->getUri(), // the form's action attribute
+        );
+
+        return (object)[
+            'client' => $client,
+            'form' => $form,
+        ];
+    }
 }
