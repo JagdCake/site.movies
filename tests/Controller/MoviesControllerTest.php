@@ -154,4 +154,20 @@ class MoviesControllerTest extends WebTestCase {
             $crawler->filter('article[id="1"] .movie-title')->text(),
         );
     }
+
+    public function testDeletingAMovieWorks() {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/movies/3/edit');
+
+        $form = $crawler->filter('input[value="DELETE"]')->parents()->form();
+        $client->submit($form);
+
+        $crawler = $client->followRedirect();
+        $this->assertEquals(
+            2,
+            $crawler->filter('article[id]')->count(),
+            'There should be two movies left after deleting one'
+        );
+    }
 }
