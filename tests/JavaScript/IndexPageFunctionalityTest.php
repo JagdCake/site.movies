@@ -76,4 +76,19 @@ class IndexPageFunctionalityTest extends PantherTestCase {
             'Clicking on a selected movie should hide the search results'
         );
     }
+
+    public function testAboutButtonWorks() {
+        $client = static::createPantherClient();
+        $crawler = $client->request('GET', '/movies');
+
+        $this->assertFalse(
+            $crawler->filter('.about')->isDisplayed(),
+        );
+
+        $crawler->filter('.about-button')->click();
+
+        $this->assertTrue(
+            $crawler->filter('.about')->isDisplayed(),
+        );
+    }
 }
