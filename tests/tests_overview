@@ -1,0 +1,20 @@
+App\Tests\Controller\MoviesController
+ [x] Root redirect works
+ [x] All movies are fetched from db
+ [x] Add form attributes are correct
+ [x] Adding a movie works
+ [x] Edit form attributes are correct
+ [x] Editing a movie works
+ [x] Deleting a movie works
+
+App\Tests\JavaScript\FormFunctionality
+ [x] Adding director fields works
+ [x] Removing director fields works
+ [x] Delete button works
+
+App\Tests\JavaScript\IndexPageFunctionality
+ [x] Search button works
+ [x] Movie search works
+ [x] Hiding the search results works
+ [x] About button works
+
