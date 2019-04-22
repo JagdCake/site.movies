@@ -35,4 +35,45 @@ class IndexPageFunctionalityTest extends PantherTestCase {
             'The first search result should be the title of the last added fixture data movie',
         );
     }
+
+    /**
+     * @depends testSearchButtonWorks
+     */
+    public function testHidingTheSearchResultsWorks($crawler) {
+        $this->assertTrue(
+            $crawler->filter('.movie-list')->isDisplayed(),
+        );
+
+        $crawler->filter('body')->click();
+        $this->assertFalse(
+            $crawler->filter('.movie-list')->isDisplayed(),
+            'Clicking outside the search results element should hide it'
+        );
+
+        $client = static::createPantherClient();
+
+        $crawler->filter('input[type="search"]')->sendKeys('t'); // display search results
+        $client->getKeyboard()->pressKey("\xEE\x80\x8C"); // press ESCAPE
+        $this->assertFalse(
+            $crawler->filter('.movie-list')->isDisplayed(),
+            'Pressing ESCAPE should hide the search results'
+        );
+
+        $crawler->filter('input[type="search"]')->sendKeys('t');
+        $client->getKeyboard()->pressKey("\xEE\x80\x84"); // press tab to select the first result
+        $client->getKeyboard()->pressKey("\xEE\x80\x87"); // press enter to go to the selected movie
+
+        $this->assertFalse(
+            $crawler->filter('.movie-list')->isDisplayed(),
+            'Pressing ENTER on a selected movie should hide the search results'
+        );
+
+        $crawler->filter('input[type="search"]')->sendKeys('e');
+        $crawler->filter('.movie-list p a')->first()->click();
+
+        $this->assertFalse(
+            $crawler->filter('.movie-list')->isDisplayed(),
+            'Clicking on a selected movie should hide the search results'
+        );
+    }
 }
