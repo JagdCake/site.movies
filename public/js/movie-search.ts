@@ -19,3 +19,17 @@ const showMovieElement = (show: boolean, movieElement: HTMLElement): void => {
         movieElement.classList.add('hidden');
     }
 };
+
+const searchMoviesBy = (searchString: string, movies: HTMLParagraphElement[]): void => {
+    movies.map((movie: HTMLParagraphElement) => {
+            // @ts-ignore
+            const title = movieTitle(movie.textContent);
+            const charsToSearchFor = searchString.toLowerCase();
+
+            if (title.indexOf(charsToSearchFor) > -1) {
+                showMovieElement(true, movie);
+            } else {
+                showMovieElement(false, movie);
+            }
+        });
+};
