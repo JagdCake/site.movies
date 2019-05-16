@@ -6,3 +6,8 @@ const movieTitle = (movieData: string): string => {
 
     return title;
 };
+
+const toggleSearchBox = (movieNumber: HTMLParagraphElement, searchBox: HTMLInputElement): void => {
+    movieNumber.classList.toggle('hidden');
+    searchBox.classList.toggle('hidden');
+};
