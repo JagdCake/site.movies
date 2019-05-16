@@ -11,3 +11,11 @@ const toggleSearchBox = (movieNumber: HTMLParagraphElement, searchBox: HTMLInput
     movieNumber.classList.toggle('hidden');
     searchBox.classList.toggle('hidden');
 };
+
+const showMovieElement = (show: boolean, movieElement: HTMLElement): void => {
+    if (show) {
+        movieElement.classList.remove('hidden');
+    } else {
+        movieElement.classList.add('hidden');
+    }
+};
