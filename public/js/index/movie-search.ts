@@ -33,3 +33,34 @@ const searchMoviesBy = (searchString: string, movies: HTMLParagraphElement[]): v
             }
         });
 };
+
+const movieSearch = (): void => {
+    const searchButton = document.querySelector('.search-button') as HTMLButtonElement;
+    const movieNumber = document.querySelector('.movie-number') as HTMLParagraphElement;
+    const searchBox = document.querySelector('input[type="search"]') as HTMLInputElement;
+    const movieList = document.querySelector('.movie-list') as HTMLParagraphElement;
+
+    searchButton.addEventListener('click', () => {
+        toggleSearchBox(movieNumber, searchBox);
+        showMovieElement(false, movieList);
+    });
+
+     // [].slice.call() converts a node list to array
+    const movies = [].slice.call(document.querySelectorAll('.movie-list p')) as HTMLParagraphElement[];
+
+    searchBox.addEventListener('keyup', () => {
+        showMovieElement(true, movieList);
+        searchMoviesBy(searchBox.value, movies);
+
+        document.addEventListener('keyup', (event) => {
+            if (event.which === 27 || event.which === 1) {
+                showMovieElement(false, movieList);
+            }
+        });
+        document.addEventListener('click', (event) => {
+            if (event.which === 27 || event.which === 1) {
+                showMovieElement(false, movieList);
+            }
+        });
+    });
+};
