@@ -8,7 +8,7 @@
 
     {% for movie in movies %}
         <p class="md:my-5 my-6">
-            <a href="#{{ movie.id }}" class="text-black  underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
+            <a href="#{{ movie.id }}" class="text-black underline">{{ movie.title }} | {{ movie.yearOfRelease }}</a>
         </p>
     {% endfor %}
 
@@ -71,4 +71,8 @@
         {% endif %}
     {% endfor %}
         
+{% endblock %}
+
+{% block javascript %}
+    <script src="/js/index.js"></script>
 {% endblock %}
