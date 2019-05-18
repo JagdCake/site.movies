@@ -54,7 +54,44 @@ var movieSearch = function () {
         });
     });
 };
+var showSection = function (show, section) {
+    if (show) {
+        section.classList.add('bg-red-pink');
+        section.classList.add('md:flex');
+        section.style.height = section.scrollHeight + "px";
+    }
+    else {
+        section.style.height = '0';
+        setTimeout(function () {
+            section.classList.remove('md:flex');
+            section.classList.remove('bg-red-pink');
+        }, 400);
+    }
+    return show;
+};
+var replaceImage = function (image, newImage) {
+    image.setAttribute('src', newImage);
+};
+var aboutSection = function () {
+    var toggleButton = document.querySelector('.about-button');
+    var buttonIcon = toggleButton.querySelector('img');
+    var buttonOriginalIcon = buttonIcon.getAttribute('src');
+    var buttonCloseIcon = 'images/close.svg';
+    var section = document.querySelector('.about');
+    var sectionDisplayed = false;
+    toggleButton.addEventListener('click', function () {
+        if (!sectionDisplayed) {
+            sectionDisplayed = showSection(true, section);
+            replaceImage(buttonIcon, buttonCloseIcon);
+        }
+        else {
+            sectionDisplayed = showSection(false, section);
+            replaceImage(buttonIcon, buttonOriginalIcon);
+        }
+    });
+};
 var main = function () {
     movieSearch();
+    aboutSection();
 };
 main();
