@@ -69,8 +69,8 @@ var showSection = function (show, section) {
     }
     return show;
 };
-var replaceImage = function (image, newImage) {
-    image.setAttribute('src', newImage);
+var replaceImage = function (image, newImageSrc) {
+    image.setAttribute('src', newImageSrc);
 };
 var aboutSection = function () {
     var toggleButton = document.querySelector('.about-button');
@@ -90,8 +90,26 @@ var aboutSection = function () {
         }
     });
 };
+var toggleBackToTopButton = function (currentScrollPosition, button) {
+    if (currentScrollPosition >= 1200) {
+        button.classList.remove('hidden');
+    }
+    else {
+        button.classList.add('hidden');
+    }
+};
+var misc = function () {
+    var buttonUp = document.querySelector('.go-up');
+    window.addEventListener('scroll', function () {
+        setInterval(function () {
+            var verticalScrollPosition = window.pageYOffset;
+            toggleBackToTopButton(verticalScrollPosition, buttonUp);
+        }, 1000);
+    });
+};
 var main = function () {
     movieSearch();
     aboutSection();
+    misc();
 };
 main();
