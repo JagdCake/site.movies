@@ -13,3 +13,7 @@ const showSection = (show: boolean, section: HTMLElement): boolean => {
 
     return show;
 };
+
+const replaceImage = (image: HTMLImageElement, newImageSrc: string): void => {
+    image.setAttribute('src', newImageSrc);
+};
