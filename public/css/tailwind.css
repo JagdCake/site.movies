@@ -118,7 +118,8 @@ a img {
     -webkit-transition:height 0.4s linear;
     -o-transition:height 0.4s linear;
     transition:height 0.4s linear;
-    height:0
+    height:0;
+    overflow: hidden;
 }
 .first-separator{
     height:1px;
