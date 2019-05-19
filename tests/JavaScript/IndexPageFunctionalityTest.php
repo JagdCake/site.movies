@@ -81,14 +81,18 @@ class IndexPageFunctionalityTest extends PantherTestCase {
         $client = static::createPantherClient();
         $crawler = $client->request('GET', '/movies');
 
-        $this->assertFalse(
-            $crawler->filter('.about')->isDisplayed(),
+        $this->assertEquals(
+            '8px',
+            $crawler->filter('.about')->getCSSValue('height'),
+            'The about section\'s height should equal the default HTML block element\'s height when the height is set to 0'
         );
 
         $crawler->filter('.about-button')->click();
 
-        $this->assertTrue(
-            $crawler->filter('.about')->isDisplayed(),
+        $this->assertContains(
+            'height',
+            $crawler->filter('.about')->getAttribute('style'),
+            'Opening the about section should set its height with a style attribute'
         );
     }
 }
