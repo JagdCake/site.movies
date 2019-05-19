@@ -17,7 +17,7 @@ fix_paths() {
 
     sed -i 's/href="\/javascript"/href="javascript.html"/g' ./docs/index.html
 
-    sed -i 's/\/js\/all.js"/js\/min.all.js"/g' ./docs/index.html
+    sed -i 's/\/js\/index.js"/js\/min.index.js"/g' ./docs/index.html
 }
 
 build_html() {
@@ -34,8 +34,8 @@ build_css() {
 }
 
 build_js() {
-    cp -r ./public/js/all.js ./docs/js/
-    build js ./docs/js/all.js ./docs/js/
+    cp -r ./public/js/index.js ./docs/js/
+    build js ./docs/js/index.js ./docs/js/
 }
 
 first_build() {
