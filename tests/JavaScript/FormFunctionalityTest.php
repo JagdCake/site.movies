@@ -48,7 +48,9 @@ class FormFunctionalityTest extends PantherTestCase {
     public function testDeleteButtonWorks() {
         $client = static::createPantherClient();
 
-        $crawler = $client->request('GET', '/movies/3/edit');
+        $client->request('GET', '/movies');
+        // click the first edit link to go to the edit form for the last movie
+        $crawler = $client->clickLink('Edit');
 
         $crawler->selectButton('Delete')->click();
 
