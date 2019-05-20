@@ -104,7 +104,8 @@ class MoviesControllerTest extends WebTestCase {
     public function testEditFormAttributesAreCorrect() {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/movies/1/edit');
+        $client->request('GET', '/movies');
+        $crawler = $client->clickLink('Edit');
 
         $this->assertEquals(
             'PUT',
@@ -114,8 +115,8 @@ class MoviesControllerTest extends WebTestCase {
 
         $form = $crawler->filter('form[name="movie"]')->form();
 
-        $this->assertEquals(
-            'http://localhost/movies/1/edit',
+        $this->assertRegExp(
+            '/movies\/\d{1,5}\/edit/',
             $form->getUri(), // the form's action attribute
         );
 
@@ -133,7 +134,7 @@ class MoviesControllerTest extends WebTestCase {
         $form = $editRoute->form;
 
         $this->assertEquals(
-            'Test Movie 0',
+            'Test Movie 2',
             $form->getValues()['movie[title]'],
             'The data of the movie to edit should be displayed'
         );
@@ -143,22 +144,25 @@ class MoviesControllerTest extends WebTestCase {
         ]);
         $client->submit($form);
 
+        preg_match('/\d{1,5}/', $form->getUri(), $matches);
+        $movieId = $matches[0];
         $this->assertTrue(
-            $client->getResponse()->isRedirect('/movies#1'),
+            $client->getResponse()->isRedirect('/movies#'.$movieId),
             'Controller should redirect to the updated movie on successful submit'
         );
 
         $crawler = $client->followRedirect();
         $this->assertEquals(
             'Edit Movie 0',
-            $crawler->filter('article[id="1"] .movie-title')->text(),
+            $crawler->filter('article[id="'.$movieId.'"] .movie-title')->text(),
         );
     }
 
     public function testDeletingAMovieWorks() {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/movies/3/edit');
+        $client->request('GET', '/movies');
+        $crawler = $client->clickLink('Edit');
 
         $form = $crawler->filter('input[value="DELETE"]')->parents()->form();
         $client->submit($form);
