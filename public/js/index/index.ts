@@ -6,6 +6,6 @@ const main = (): void => {
     movieSearch();
     aboutSection();
     misc();
-}
+};
 
 main();
