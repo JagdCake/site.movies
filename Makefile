@@ -82,6 +82,9 @@ build-html:
 	$(minify.html) --input-dir $(dir.prod)/ --output-dir $(dir.prod)/
 
 build-css:
+	@echo Make sure the CSS is purged of unused rules before minifying
+	@echo Press enter to confirm
+	@read
 	$(minify.css) --input $(css.prod) --output $(css.prod)
 
 build-js:
