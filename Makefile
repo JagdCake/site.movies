@@ -1,4 +1,5 @@
 .PHONY: all
+.PHONY: movie-update
 
 .PHONY: create-prod-dir
 .PHONY: copy-files-to-prod
@@ -44,6 +45,9 @@ database_dump = pg_dump -O
 database_name = movies
 
 all: test create-prod-dir copy-files-to-prod generate-html uncomment-csp fix-filepaths build-html build-css build-js optimize-images dump-database
+
+# build after adding / editing movies
+movie-update: test generate-html uncomment fix-filepaths build-html dump-database
 
 create-prod-dir:
 	mkdir $(dir.prod)/
