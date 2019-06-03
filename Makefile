@@ -83,6 +83,7 @@ build-html:
 
 build-css:
 	@echo Make sure the CSS is purged of unused rules before minifying
+	@echo Use uncss --ignore '.md\:flex'
 	@echo Press enter to confirm
 	@read
 	$(minify.css) --input $(css.prod) --output $(css.prod)
