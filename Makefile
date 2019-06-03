@@ -10,6 +10,7 @@
 .PHONY: build-js
 .PHONY: optimize-images
 .PHONY: test
+.PHONY: dump-database
 
 dir.prod = ./docs/
 dir.dev = ./public/
@@ -39,7 +40,10 @@ optimize.svg = svgo
 test.php = bin/phpunit --testdox
 test.php.files = tests/JavaScript/IndexPageFunctionalityTest.php
 
-all: test create-prod-dir copy-files-to-prod generate-html uncomment-csp fix-filepaths build-html build-css build-js optimize-images
+database_dump = pg_dump -O
+database_name = movies
+
+all: test create-prod-dir copy-files-to-prod generate-html uncomment-csp fix-filepaths build-html build-css build-js optimize-images dump-database
 
 create-prod-dir:
 	mkdir $(dir.prod)/
@@ -85,3 +89,8 @@ optimize-images:
 
 test:
 	$(test.php) $(test.php.files)
+
+dump-database:
+	$(database_dump) $(database_name) -f ./dump && \
+	tar -caf ./database_dump.$(database_name).tar.xz dump && \
+	rm ./dump
