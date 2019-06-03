@@ -26,9 +26,7 @@
 
 ## Testing
 - first update the `DATABASE_URL` for the test environment in [.env.test](./.env.test)
-- create the test database with `bin/console -e test doctrine:database:create`
-- execute the migrations `bin/console -e test doctrine:migrations:migrate`
-- load the movie data fixture `bin/console -e test doctrine:fixtures:load`
+- to set up the test environment — `cd tests/` and `make`
 - run `bin/phpunit` or `bin/phpunit --testdox` (displays an overview of the test cases)
     - to run specific tests `bin/phpunit tests/SomeTestFile.php`, `bin/phpunit tests/SomeTestDirectory/` or `bin/phpunit --filter {someTestMethodName}`
       - [Controller tests](./tests/Controller/) (fast) use Symfony's default testing components: [BrowserKit](https://symfony.com/doc/current/components/browser_kit.html) and [DomCrawler](https://symfony.com/doc/current/components/dom_crawler.html)
