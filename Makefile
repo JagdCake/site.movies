@@ -50,6 +50,7 @@ create-prod-dir:
 copy-files-to-prod:
 	cp ./templates/javascript.html $(dir.prod)/
 	cp $(css.dev) $(css.prod)
+	cp $(dir.dev.css)/tachyons.min.css $(dir.prod.css)/
 	cp $(js.dev) $(js.prod)
 	cp -r $(dir.dev.images) $(dir.prod)/
 
