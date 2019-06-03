@@ -13,8 +13,8 @@
 .PHONY: test
 .PHONY: dump-database
 
-dir.prod = ./docs/
 dir.dev = ./public/
+dir.prod = ./docs/
 
 dir.dev.css = $(dir.dev)/css/
 dir.dev.js = $(dir.dev)/js/
