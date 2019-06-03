@@ -37,7 +37,7 @@ optimize.png = optipng -o5
 optimize.svg = svgo
 
 test.php = bin/phpunit --testdox
-test.php.files =
+test.php.files = tests/JavaScript/IndexPageFunctionalityTest.php
 
 all: test create-prod-dir copy-files-to-prod generate-html uncomment-csp fix-filepaths build-html build-css build-js optimize-images
 
