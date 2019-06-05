@@ -4,7 +4,7 @@
 .PHONY: create-prod-dir
 .PHONY: copy-files-to-prod
 .PHONY: generate-html
-.PHONY: uncomment
+.PHONY: uncomment-csp
 .PHONY: fix-filepaths
 .PHONY: build-html
 .PHONY: build-css
