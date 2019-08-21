@@ -4,15 +4,16 @@ module.exports = {
   separator: ':',
   theme: {
     screens: {
-      sm: '640px',
+      sm: '568px',
       md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      lg: '992px',
+      lg2: '1200px',
+      xl: '1500px',
     },
     colors: {
       transparent: 'transparent',
 
-      black: '#000',
+      black: '#111',
       white: '#fff',
 
       gray: {
@@ -146,6 +147,10 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      'poster': '26rem',
+      '1/2': '50%',
+      '49p': '49%',
+      '1p': '1%',
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {
@@ -189,6 +194,7 @@ module.exports = {
       xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+      black: '0 0 4px 2px rgba(0,0,0,.2)',
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
       none: 'none',
     },
@@ -261,6 +267,10 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      'f3': '1.6rem',
+      'f3-vw': '1.6vw',
+      'f2': '1.9vw',
+      'f1': '3vw',
     },
     fontWeight: {
       hairline: '100',
@@ -349,6 +359,7 @@ module.exports = {
     opacity: {
       '0': '0',
       '25': '0.25',
+      '30': '0.3',
       '50': '0.5',
       '75': '0.75',
       '100': '1',
@@ -389,6 +400,7 @@ module.exports = {
       '2/5': '40%',
       '3/5': '60%',
       '4/5': '80%',
+      '90p': '90%',
       '1/6': '16.666667%',
       '2/6': '33.333333%',
       '3/6': '50%',
