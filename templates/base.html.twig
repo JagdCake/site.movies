@@ -45,7 +45,7 @@
 
             <nav class="flex flex-wrap w-full">
                 <section class="w-full bg-red-pink text-center slackey leading-none rounded-b">
-                    <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-wider tracking-tight">
+                    <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-widest tracking-tight">
                         {% if app.request.get('_route') == 'movies' %}
                             <a class="text-shadow text-black no-underline" href="{{ path('addMovie') }}">Add a Movie!</a>
                         {% else %}
@@ -122,7 +122,7 @@
         </main>
 
         <footer class="w-full bg-red-pink text-center slackey leading-none rounded-t justify-center">
-            <h1 class="my-4 lg2:text-f1 lg:text-4xl text-4xl tracking-wider">
+            <h1 class="my-4 lg2:text-f1 lg:text-4xl text-4xl tracking-widest">
                 <a class="text-shadow text-black no-underline" href="/">The End</a>
             </h1>
         </footer>
