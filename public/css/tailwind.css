@@ -11,6 +11,10 @@
  */
 @tailwind base;
 
+html {
+    line-height: 1.15;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
