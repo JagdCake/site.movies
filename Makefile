@@ -102,3 +102,6 @@ dump-database:
 	$(database_dump) $(database_name) -f ./dump && \
 	tar -caf ./database_dump.$(database_name).tar.xz dump && \
 	rm ./dump
+
+public/css/main.css: public/css/tailwind.css tailwind.config.js
+	npx tailwind build public/css/tailwind.css -o public/css/main.css
