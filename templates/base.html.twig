@@ -45,7 +45,7 @@
 
             <nav class="flex flex-wrap w-full">
                 <section class="w-full bg-red-pink text-center slackey leading-none rounded-b">
-                    <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-widest tracking-tight">
+                    <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-widest tracking-tighter">
                         {% if app.request.get('_route') == 'movies' %}
                             <a class="text-shadow text-black no-underline" href="{{ path('addMovie') }}">Add a Movie!</a>
                         {% else %}
@@ -60,7 +60,7 @@
                     </button>
 
                     <section class="flex-3 sm:flex-2 mt-4 sm:mt-0 sm:w-3/5 lg:w-3/4 w-full sm:rounded rounded-none h-12 lg:h-16 md:h-auto bg-red-pink flex flex-wrap justify-center">
-                        <p class="movie-number slackey text-lg tracking-tight md:text-2xl m-2 md:m-0 xl:text-f3-vw self-center"><em class="not-italic">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
+                        <p class="movie-number slackey text-lg tracking-tighter md:text-2xl m-2 md:m-0 xl:text-f3-vw self-center"><em class="not-italic">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
                         <input class="hidden w-full rounded text-xl lg:text-f3-vw md:text-2xl border b--red-pink bg-black red-pink p-2 placeholder-red-500" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
 
                         <article class="lg:mt-16 mt-12 md:mt-16 mw-90 md:mw-30 hidden movie-list absolute bg-red-pink lg:text-f3 z-20 text-xl p-2 rounded-b text-left shadow">
