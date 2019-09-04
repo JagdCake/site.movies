@@ -14,8 +14,7 @@
 
 #### Tailwind CSS
 - run `yarn` or `npm install`
-- process the CSS with `npx tailwind build public/css/tailwind.css -c tailwind.js -o public/css/main.css`
-    - the CSS needs to be processed after every change made in the [public/css/tailwind.css](./public/css/tailwind.css) and / or [tailwind.js](./tailwind.js) files
+- process the CSS with `make public/css/main.css`
 
 ## Development
 - start the development server with `bin/console server:run` or `php bin/console server:run`
