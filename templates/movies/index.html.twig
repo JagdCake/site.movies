@@ -19,7 +19,7 @@
     {% for movie in movies %}
         <article id="{{ movie.id }}" class="md:w-1/3 w-90p sm:w-3/5">
             {% if app.request.get('_route') == 'movies' %}
-                <a class="no-underline text-black bg-yellow shadow-md text-2xl p-2 rounded-full" href="{{ path('editMovie', {'id': movie.id}) }}">Edit</a>
+                <a class="no-underline text-black bg-yellow-400 shadow-md text-2xl p-2 rounded-full" href="{{ path('editMovie', {'id': movie.id}) }}">Edit</a>
             {% endif %}
 
             <div class="mx-auto text-center">
@@ -41,10 +41,10 @@
                                 {% endfor %}
                            <h2 class="top-actors text-base mt-3 font-normal">Starring</h2>
                                 <p>
-                                    <em class="roman">{{ movie.topActors[0] }}</em>
+                                    <em class="not-italic">{{ movie.topActors[0] }}</em>
                                 </p>
                                 <p>
-                                    <em class="roman">{{ movie.topActors[1] }}</em>
+                                    <em class="not-italic">{{ movie.topActors[1] }}</em>
                                 </p>
                         </div>
                     </div>

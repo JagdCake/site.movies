@@ -7,9 +7,13 @@
  *
  * If using `postcss-import`, use this import instead:
  *
- * @import "tailwindcss/preflight";
+ * @import "tailwindcss/base";
  */
-@tailwind preflight;
+@tailwind base;
+
+html {
+    line-height: 1.15;
+}
 
 /**
  * This injects any component classes registered by plugins.

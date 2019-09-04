@@ -11,7 +11,7 @@
             }) }}
 
             {{ form_widget(form.imdb_id, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
             {{ form_label(form.title, 'Title', {
@@ -19,7 +19,7 @@
             }) }}
 
             {{ form_widget(form.title, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
             {{ form_label(form.year_of_release, 'Year', {
@@ -27,7 +27,7 @@
             }) }}
 
             {{ form_widget(form.year_of_release, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
             {{ form_label(form.runtime, 'Runtime (minutes)', {
@@ -35,7 +35,7 @@
             }) }}
 
             {{ form_widget(form.runtime, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
             {{ form_label(form.genre, 'Main genre', {
@@ -43,7 +43,7 @@
             }) }}
 
             {{ form_widget(form.genre, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
             {{ form_label(form.imdb_rating, 'IMDb rating', {
@@ -51,7 +51,7 @@
             }) }}
 
             {{ form_widget(form.imdb_rating, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
         <div class="director-section">
@@ -63,7 +63,7 @@
                     {% for directorField in form.directors %}
                         <div class="director-field">
                             {{ form_widget(directorField, {
-                                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'},
                             }) }}
                             {% if loop.index == 1 %}
                                 <button type="button" class="button-add-director text-2xl">+</button>
@@ -75,7 +75,7 @@
                 {% else %}
                     <div class="director-field">
                         {{ form_widget(form.directors.vars.prototype, {
-                            'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                            'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'},
                         }) }}
                         <button type="button" class="button-add-director text-2xl">+</button>
                     </div>
@@ -87,7 +87,7 @@
             }) }}
 
             {{ form_widget(form.top_actors[0], {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'},
                 'value': movie.topActors ? movie.topActors[0] : '',
             }) }}
 
@@ -96,7 +96,7 @@
             }) }}
 
             {{ form_widget(form.top_actors[1], {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'},
                 'value': movie.topActors ? movie.topActors[1] : '',
             }) }}
 
@@ -105,7 +105,7 @@
             }) }}
 
             {{ form_widget(form.my_rating, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
             {{ form_label(form.watched_on, 'Watched on (date)', {
@@ -113,7 +113,7 @@
             }) }}
 
             {{ form_widget(form.watched_on, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'},
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'},
                 'value': movie.watchedOn ? movie.watchedOn : 'now' | date('d M Y'),
             }) }}
 
@@ -122,14 +122,14 @@
             }) }}
 
             {{ form_widget(form.discussion, {
-                'attr': {'class': 'border-2 text-xl p-2 mb-4'}
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
     </div>
 </article>
 
 <div class="mt-6"></div>
-<button class="p-2 m-8 bg-blue rounded font-bold">{{ button_label|default('Add') }}</button>
-<a class="bg-orange text-white no-underline p-2 rounded font-bold m-8" href="{{ path('movies') }}">Cancel</a>
+<button class="p-2 m-8 bg-blue-600 rounded font-bold">{{ button_label|default('Add') }}</button>
+<a class="bg-orange-500 text-white no-underline p-2 rounded font-bold m-8" href="{{ path('movies') }}">Cancel</a>
 
 {{ form_end(form, {'render_rest': false}) }}
 

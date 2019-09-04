@@ -45,7 +45,7 @@
 
             <nav class="flex flex-wrap w-full">
                 <section class="w-full bg-red-pink text-center slackey leading-none rounded-b">
-                    <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-wider tracking-tight">
+                    <h1 class="lg2:text-f1 text-2xl sm:text-4xl my-4 lg:tracking-widest tracking-tighter">
                         {% if app.request.get('_route') == 'movies' %}
                             <a class="text-shadow text-black no-underline" href="{{ path('addMovie') }}">Add a Movie!</a>
                         {% else %}
@@ -60,8 +60,8 @@
                     </button>
 
                     <section class="flex-3 sm:flex-2 mt-4 sm:mt-0 sm:w-3/5 lg:w-3/4 w-full sm:rounded rounded-none h-12 lg:h-16 md:h-auto bg-red-pink flex flex-wrap justify-center">
-                        <p class="movie-number slackey text-lg tracking-tight md:text-2xl m-2 md:m-0 xl:text-f3-vw self-center"><em class="roman">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
-                        <input class="hidden w-full rounded text-xl lg:text-f3-vw md:text-2xl border b--red-pink bg-black red-pink p-2" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
+                        <p class="movie-number slackey text-lg tracking-tighter md:text-2xl m-2 md:m-0 xl:text-f3-vw self-center"><em class="not-italic">{% block numberOfMovies %}{% endblock %} movies</em> since June 2016</p>
+                        <input class="hidden w-full rounded text-xl lg:text-f3-vw md:text-2xl border b--red-pink bg-black red-pink p-2 placeholder-red-500" type="search" role="searchbox" placeholder=" Type here to search" autocomplete="off" spellcheck="off" autofocus>
 
                         <article class="lg:mt-16 mt-12 md:mt-16 mw-90 md:mw-30 hidden movie-list absolute bg-red-pink lg:text-f3 z-20 text-xl p-2 rounded-b text-left shadow">
                             {% block search %}{% endblock %}
@@ -80,7 +80,7 @@
       <article class="about w-full lg:text-sm md:text-base text-sm z-10 lg:p-1 p-2 transition-height flex-none rounded-b">
             <section class="md:w-1/3 w-full p-1">
                 <p class="m-0">This is just my personal movie catalogue. The idea is to catalogue every movie I (re)watch by creating an entry which includes 5 things:</p>
-                <ol>
+                <ol class="list-decimal list-inside pl-5">
                     <li class="my-2">Info card</li>
                     <li class="my-2">My rating</li>
                     <li class="my-2">"Watched on" date</li>
@@ -89,7 +89,7 @@
                 </ol>
             </section>
             <section class="md:border-l md:border-r md:border-t-0 md:border-b-0 border-t border-b border-black md:w-1/3 w-full p-1">
-                <h1 class="text-center md:m-0 my-2 text-base">Rating system:</h1>
+                <h1 class="text-center md:m-0 my-2 text-base font-bold">Rating system:</h1>
                 <div class="flex">
                     <div class="text-left mx-auto text-sm">
                         <p class="my-2">Bad Eggplant = <span class="font-mono">1 to 3.9</span></p>
@@ -102,7 +102,10 @@
                 </div>
             </section>
             <section class="md:w-1/3 w-full p-1">
-                <address class="text-center md:m-0 my-4 roman"><span class="font-bold">Contact:</span> jc@jagdcake.com</address>
+                <address class="text-center md:m-0 my-4 not-italic">
+                    <h1 class="font-bold inline">Contact:</h1>
+                    <a href="mailto:jc@jagdcake.com">jc@jagdcake.com</a>
+                </address>
                 <p class="text-center my-4">
                     <a class="text-black underline" href="https://github.com/JagdCake/site.movies">GitHub repo</a>
                 </p>
@@ -122,7 +125,7 @@
         </main>
 
         <footer class="w-full bg-red-pink text-center slackey leading-none rounded-t justify-center">
-            <h1 class="my-4 lg2:text-f1 lg:text-4xl text-4xl tracking-wider">
+            <h1 class="my-4 lg2:text-f1 lg:text-4xl text-4xl tracking-widest">
                 <a class="text-shadow text-black no-underline" href="/">The End</a>
             </h1>
         </footer>
