@@ -17,7 +17,7 @@
 - process the CSS with `make public/css/main.css`
 
 ## Development
-- start the development server with `bin/console server:run` or `php bin/console server:run`
+- start the development server with `bin/console server:run` or `symfony server:start`
 - make your changes and inspect them on the server
     - if editing TypeScript files, run `make` from the [public/js/](./public/js/) directory
 - to generate and build the static site — `make` from the root dir
