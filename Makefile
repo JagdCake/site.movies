@@ -47,7 +47,7 @@ database_name = movies
 all: test create-prod-dir copy-files-to-prod generate-html uncomment-csp fix-filepaths build-html build-css build-js optimize-images dump-database
 
 # build after adding / editing movies
-movie-update: test generate-html uncomment-csp fix-filepaths build-html dump-database
+movie-update: test generate-html uncomment-csp fix-filepaths build-html add-space dump-database
 
 create-prod-dir:
 	mkdir $(dir.prod)/
@@ -80,6 +80,10 @@ fix-filepaths:
 
 build-html:
 	$(minify.html) --input-dir $(dir.prod)/ --output-dir $(dir.prod)/
+
+# minifying the HTML removes the space before the email address
+add-space:
+	sed -i 's/Contact:/Contact: /g' $(html.prod)
 
 build-css:
 	@echo Make sure the CSS is purged of unused rules before minifying
