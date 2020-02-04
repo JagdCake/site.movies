@@ -87,7 +87,8 @@ add-space:
 
 build-css:
 	@echo Make sure the CSS is purged of unused rules before minifying
-	@echo Use uncss --ignore '.md\:flex'
+	@echo uncss --ignore '.md\:flex' $(html.prod) --output ./main.css
+	@echo mv ./main.css $(css.prod)
 	@echo Press enter to confirm
 	@read
 	$(minify.css) --input $(css.prod) --output $(css.prod)
