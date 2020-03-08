@@ -23,6 +23,11 @@ class Movie
     private $imdb_id;
 
     /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $language;
+
+    /**
      * @ORM\Column(type="string", length=100)
      */
     private $title;
@@ -97,6 +102,18 @@ class Movie
     public function setImdbId(string $imdb_id): self
     {
         $this->imdb_id = $imdb_id;
+
+        return $this;
+    }
+
+    public function getLanguage(): ?string
+    {
+        return $this->language;
+    }
+
+    public function setLanguage(string $language): self
+    {
+        $this->language = $language;
 
         return $this;
     }
