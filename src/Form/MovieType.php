@@ -16,6 +16,7 @@ class MovieType extends AbstractType
     {
         $builder
             ->add('imdb_id')
+            ->add('language')
             ->add('title')
             ->add('year_of_release')
             ->add('runtime')

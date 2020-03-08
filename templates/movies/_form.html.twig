@@ -14,6 +14,15 @@
                 'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'}
             }) }}
 
+            {{ form_label(form.imdb_id, 'Main language', {
+                'label_attr': {'class': 'text-2xl block'}
+            }) }}
+
+            {{ form_widget(form.language, {
+                'attr': {'class': 'border-2 text-xl p-2 mb-4 text-black'},
+                'value': movie.language ? movie.language : 'English'
+            }) }}
+
             {{ form_label(form.title, 'Title', {
                 'label_attr': {'class': 'text-2xl block'}
             }) }}
